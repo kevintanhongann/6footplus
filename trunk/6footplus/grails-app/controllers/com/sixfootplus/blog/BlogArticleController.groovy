@@ -2,5 +2,5 @@ package com.sixfootplus.blog
 
 class BlogArticleController {
 
-  def scaffold = true
+    def scaffold = true
 }
