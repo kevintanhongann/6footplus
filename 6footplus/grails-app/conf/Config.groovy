@@ -9,6 +9,10 @@
 // if(System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
+
+uiperformance.enabled = true
+uiperformance.processImages = false
+uiperformance.html.compress = true
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
@@ -35,8 +39,13 @@ grails.enable.native2ascii = true
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://www.6footplus.com"
+        upload.dir = "/home/anerlich/public_html/ROOT/images/"
     }
+	development {
+        grails.serverURL = "http://www.localhost:8080"
+        upload.dir = "/Users/andisa/Desktop/"
+	}    
 }
 
 // log4j configuration
@@ -60,7 +69,4 @@ log4j = {
 	       'org.hibernate'
 
     warn   'org.mortbay.log'
-}
-
-
-     
+}    

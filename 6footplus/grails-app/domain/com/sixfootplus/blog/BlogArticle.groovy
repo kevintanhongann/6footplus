@@ -1,8 +1,5 @@
 package com.sixfootplus.blog
 
-import com.sixfootplus.blog.BlogComment
-import com.sixfootplus.blog.BlogUser
-
 class BlogArticle {
 
     static searchable = true
@@ -10,16 +7,16 @@ class BlogArticle {
     //properties
     String subject
     String body
-    ArticleStatus status = ArticleStatus.UNPUBLISHED
     Date dateCreated
     Date lastUpdated
+    ArticleStatus status = ArticleStatus.UNPUBLISHED
 
     //relations
     BlogUser author
-    static hasMany = [comments: BlogComment]
+    static hasMany = [comments: BlogComment, links: BlogLink]
 
     static constraints = {
-        subject(blank: false, nullable: false, size: 5..200, unique: true)
+        subject(blank: false, nullable: false, size: 5..200, unique: false)
         body(blank: false, nullable: false, size: 5..10000)
         status(nullable: false)
         author(nullable: false)
@@ -28,6 +25,6 @@ class BlogArticle {
 
 enum ArticleStatus {
     UNPUBLISHED,
-    PUBLISED,
+    PUBLISHED,
     DISABLED
 }
