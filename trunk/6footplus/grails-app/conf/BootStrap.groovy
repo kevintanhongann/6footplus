@@ -10,7 +10,6 @@ class BootStrap {
     def init = {servletContext ->
     
         // is data in DB already available?
-        //
         if (BlogUser.findByUsername('admin')) {
             log.info 'Database is initialized already!'
             return
@@ -32,7 +31,6 @@ class BootStrap {
         }     
 
         // create an article (in admin-role)
-        //
         BlogArticle article = new BlogArticle()
         article.subject = 'Java Magazin bringt Grails Tutorial'
         article.body = '''Es ist soweit:
@@ -51,7 +49,7 @@ class BootStrap {
         // create a comment for the article above
         //
         BlogComment comment = new BlogComment()
-        comment.message = "Danke für den Artikel. Mein konstruktives Feedback: Dies und das..."
+        comment.message = "Danke fuerr den Artikel. Mein konstruktives Feedback: Dies und das..."
         comment.article = article
         comment.author = "Guru"
         if (!comment.save()) {
