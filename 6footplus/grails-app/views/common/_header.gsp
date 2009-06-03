@@ -1,3 +1,4 @@
+<span style="color: #999966">Andreas Nerlich</span>
 <div id="header">
     <a href="/">
         <SCRIPT LANGUAGE="JavaScript">

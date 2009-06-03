@@ -1,6 +1,8 @@
 <html>
 <head>
     <title><g:layoutTitle default="6footplus.com"/></title>
+    <feed:meta kind="atom" version="1.0" controller="feed" action="atom"/>
+    <feed:meta kind="rss" version="2.0" controller="feed" action="rss"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="SHORTCUT ICON" href="${createLinkTo(dir: 'images', file: 'favicon.ico')}"/>
     <p:css name='lightbox'/>
