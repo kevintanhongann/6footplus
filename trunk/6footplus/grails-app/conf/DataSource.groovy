@@ -28,9 +28,9 @@ environments {
 		    pooled = true
 			dbCreate = "update"
 			driverClassName = "com.mysql.jdbc.Driver"
-			username = "#"
-			password = "#"
-			url = "jdbc:mysql://localhost:3306/#"
+			username = "sixfoot"
+			password = "sixfoot"
+			url = "jdbc:mysql://localhost:3306/sixfoot"
 		}
 	}
 }

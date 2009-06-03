@@ -3,7 +3,7 @@
         <div style="background: #999966"><img alt="" src="${createLinkTo(dir: 'images', file: 'surfertop_3.gif')}" border="0" /></div>
         <p class="textlight" style="padding: 7px;">herzlich willkommen! i&#39;m a german speaking south african currently living and working in munich, germany. i&#39;m a java, grails, groovy software developer and one might notice my site being a bit of a geek&#39;s sandpit. feel free to have a gander!</p>
         <p class="textlight" style="padding: 7px;">the 6footplus fella, <br/>andreas nerlich</p>
-        <div style="padding-left: 7px; margin-bottom: 5px"><a title="My Friendfeed.com" href="http://friendfeed.com/6footplus"><img src="/images/friendfeed_32.png" width="22" border="0"/></a>&nbsp;&nbsp;&nbsp;<img title="Coming soon" src="/images/feed_32.png" width="22"/>&nbsp;&nbsp;&nbsp;<a href="http://www.linkedin.com/in/andreasnerlich" title="My LinkedIn.com"><img src="/images/linkedin_32.png" width="22" border="0"/></a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/6footplus" title="My Twitter.com"><img src="/images/twitter_32.png" border="0" width="22"/></a>&nbsp;&nbsp;&nbsp;<a href="http://vimeo.com/sixfootplus/videos" title="My Vimeo.com"><img src="/images/vimeo_32.png" width="22" border="0"/></a>&nbsp;&nbsp;&nbsp;<a href="http://www.flickr.com/photos/6footplus/" title="My Flickr.com"><img src="/images/flickr_32.png" border="0" width="22"/></a></div>
+        <div style="padding-left: 7px; margin-bottom: 5px"><a title="My Friendfeed.com" href="http://friendfeed.com/6footplus"><img src="/images/friendfeed_32.png" width="22" border="0"/></a>&nbsp;&nbsp;&nbsp;<a href="/feed/rss"><img title="RSS" src="/images/feed_32.png" width="22" border="0"/></a>&nbsp;&nbsp;&nbsp;<a href="http://www.linkedin.com/in/andreasnerlich" title="My LinkedIn.com"><img src="/images/linkedin_32.png" width="22" border="0"/></a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/6footplus" title="My Twitter.com"><img src="/images/twitter_32.png" border="0" width="22"/></a>&nbsp;&nbsp;&nbsp;<a href="http://vimeo.com/sixfootplus/videos" title="My Vimeo.com"><img src="/images/vimeo_32.png" width="22" border="0"/></a>&nbsp;&nbsp;&nbsp;<a href="http://www.flickr.com/photos/6footplus/" title="My Flickr.com"><img src="/images/flickr_32.png" border="0" width="22"/></a></div>
     </div>
     <div id="footer-right">    
         <div id="footer-right-top">
@@ -37,5 +37,5 @@
         </div>
     </div>
 </div>
-<div style="clear:both; margin-top: 10px; margin-bottom: 20px; border-bottom: 1px solid #666633;">&nbsp;</div>
-
+<div style="clear:both; margin-top: 10px; margin-bottom: 10px; border-bottom: 1px solid #666633;">&nbsp;</div>
+<p class="date" style="text-align: right">built using groovy & grails</p>

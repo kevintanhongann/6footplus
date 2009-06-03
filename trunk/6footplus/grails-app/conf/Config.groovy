@@ -43,7 +43,7 @@ environments {
         upload.dir = "/home/anerlich/public_html/ROOT/images/"
     }
 	development {
-        grails.serverURL = "http://www.localhost:8080"
+        grails.serverURL = "http://localhost:8080"
         upload.dir = "/Users/andisa/Desktop/"
 	}    
 }
