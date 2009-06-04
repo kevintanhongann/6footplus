@@ -10,14 +10,24 @@ class HomeController {
         
         Map model = [:]
         model.articles = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED,
-                [max: 1,
-                        offset: params.offset,
-                        sort: 'dateCreated',
-                        order: 'desc'])
+            [max: params.max ?: 1,
+                offset: params.offset,
+                sort: 'dateCreated',
+                order: 'desc'])
         model.blogCount = BlogArticle.countByStatus(ArticleStatus.PUBLISHED)
         return model
     }
     
+    def recent = {
+
+        def articles = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED,
+            [max: params.maxRecent ?: 4,
+                sort: 'dateCreated',
+                order: 'desc'])
+        
+        return [articles:articles]
+    }
+
     def show = {
         def article = BlogArticle.get(params.id)
         return [article: article]

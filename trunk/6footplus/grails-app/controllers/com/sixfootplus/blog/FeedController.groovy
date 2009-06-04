@@ -6,13 +6,16 @@ import org.codehaus.groovy.grails.commons.ConfigurationHolder as holder
 class FeedController {
 
     def host = holder.config.grails.serverURL
+    def max = 10
+    def sort = "dateCreated"
+    def order = "desc"
 
     def atom = {
         render(feedType: "atom") {
             title = "6footplus.com - ATOM"
             link = host
 
-            BlogArticle.list(sort: "dateCreated", order: "desc").each() {
+            BlogArticle.list(max: max, sort: sort, order: order).each() {
                 def article = it
                 entry(it.subject) {
                     author = "Andreas Nerlich"
@@ -33,7 +36,7 @@ class FeedController {
             link = host
             description = "blog entries by the 6footplus fella"
 
-            BlogArticle.list(sort: "dateCreated", order: "desc").each() {
+            BlogArticle.list(max: max, sort: sort, order: order).each() {
                 def article = it
                 entry(it.subject) {
                     author = "Andreas Nerlich"
