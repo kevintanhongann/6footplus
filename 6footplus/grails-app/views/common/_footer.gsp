@@ -30,9 +30,20 @@
             <div style="clear:both"></div>
         </div>
         <div id="footer-right-bottom">
-            <div class="h1">my contact details</div>
-            <div style="margin-top:10px; padding-left: 20px; float:left; width:80px; height:85px"><img src="/images/6.gif" border="1" style="border-style: solid; border-color: rgb(102, 102, 51);"/></div>
-            <div style="margin-top:10px; padding-left: 20px; float:left; width:150px">Andreas Nerlich<br />Web Developer<br />Munich, Germany<br />me&#64;6footplus.com<br /></div>
+            <div id="footer-right-middle-left">
+                <div class="h1" style="padding-bottom: 10px">my contact details</div>
+                <div style="padding-left: 20px; float:left; width:150px">Andreas Nerlich<br />Web Developer<br />Munich, Germany<br />me&#64;6footplus.com<br /></div>
+            </div>
+            <div id="footer-right-middle-center">
+                <div style="padding-bottom: 10px"><a href="${createLink(controller:'home',action:'index',params:[max:5])}" class="title">my recent articles</a></div>
+                <g:include controller="home" action="recent" params="[maxRecent:4]"/>
+            </div>
+            <div id="footer-right-middle-right">
+                <div class="h1" style="padding-bottom: 10px">more stuff</div>
+                <span style="padding-left: 20px">• <a href="http://photos.6footplus.com/recent.php">my photos</a></span><br/>
+                <span style="padding-left: 20px">• <a href="/pics/">archived photos</a></span><br/>
+                <span style="padding-left: 20px">• <a href="/feed/rss">rss feed</a></span>
+            </div>
             <div style="clear:both"></div>
         </div>
     </div>
