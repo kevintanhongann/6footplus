@@ -2,6 +2,7 @@
 <g:set var="index" value="${article?.id}"/>
 
 <span id="comment_link_${index}" class="textdark2">• <g:remoteLink onComplete="Effect.BlindDown('show_comments_${index}'); return false;" action="ajaxShowComments" id="${article?.id}" update="comment_area_${index}" class="light">comments (${comments?.size()})</g:remoteLink></span>
+<div id="spinner" style="display: none;"><p class="date"><img style="vertical-align:middle" src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Loading..."/> Loading comments...</p></div>
 
 <g:if test="${showComments}">
     <script type="text/javascript">$('comment_link_${index}').hide()</script>

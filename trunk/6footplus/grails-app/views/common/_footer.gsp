@@ -41,8 +41,9 @@
             <div id="footer-right-middle-right">
                 <div class="h1" style="padding-bottom: 10px">more stuff</div>
                 <span style="padding-left: 20px">• <a href="http://photos.6footplus.com/recent.php">my photos</a></span><br/>
+                <span style="padding-left: 20px">• <a href="http://www.flickr.com/photos/6footplus/map/">my photo location</a></span><br/>
                 <span style="padding-left: 20px">• <a href="/pics/">archived photos</a></span><br/>
-                <span style="padding-left: 20px">• <a href="/feed/rss">rss feed</a></span>
+                <span style="padding-left: 20px">• <a href="/feed/rss">my rss feed</a></span>
             </div>
             <div style="clear:both"></div>
         </div>
