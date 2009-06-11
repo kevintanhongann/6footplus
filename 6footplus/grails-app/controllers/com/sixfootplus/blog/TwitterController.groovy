@@ -27,4 +27,15 @@ class TwitterController {
 
         [status:status]
     }
+
+    def more = {
+
+        def result = TwitterStatus.findAll([offset: 3, max: params.maxTweets, sort: "createdAt", order:"desc"])
+
+        if(result.isEmpty()){
+            result = Collections.emptyList()
+        }
+
+        [more:result]
+    }
 }
