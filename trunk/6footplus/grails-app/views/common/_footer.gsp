@@ -9,23 +9,22 @@
         <div id="footer-right-top">
             <twitter:userLink class="title" name="6footplus" text="my recent tweets"/>
             <g:include controller="twitter" action="list" params="[maxTweets:3]"/>
-            <p style="padding-left: 20px">• <twitter:userLink name="6footplus" text="follow me on twitter"/></p>
         </div>
         <div id="footer-right-middle">
             <div id="footer-right-middle-left">
                 <a href="http://vimeo.com/sixfootplus/videos/" class="title">my recent videos</a>
                 <g:include controller="rssReader" action="show" params="[producer:'vimeo']"/>
-                <p style="padding-left: 20px">• <a href="http://vimeo.com/sixfootplus/videos/">more videos</a></p>
+                <p id="padding-left-20">• <a href="http://vimeo.com/sixfootplus/videos/">more videos</a></p>
             </div>
             <div id="footer-right-middle-center">
                 <a href="http://photos.6footplus.com/recent.php" class="title">my recent photos</a>
                 <g:include controller="rssReader" action="show" params="[producer:'flickr']"/>
-                <p style="padding-left: 20px">• <a href="http://photos.6footplus.com/recent.php">more photos</a></p>
+                <p id="padding-left-20">• <a href="http://photos.6footplus.com/recent.php">more photos</a></p>
             </div>
             <div id="footer-right-middle-right">
                 <a href="http://twitpic.com/photos/6footplus" class="title">my recent twitpics</a>
                 <g:include controller="rssReader" action="show" params="[producer:'twitpic']"/>
-                <p style="padding-left: 20px">• <a href="http://twitpic.com/photos/6footplus">more twitpics</a></p>
+                <p id="padding-left-20">• <a href="http://twitpic.com/photos/6footplus">more twitpics</a></p>
             </div>
             <div style="clear:both"></div>
         </div>
@@ -40,10 +39,10 @@
             </div>
             <div id="footer-right-middle-right">
                 <div class="h1" style="padding-bottom: 10px">more stuff</div>
-                <span style="padding-left: 20px">• <a href="http://photos.6footplus.com/recent.php">my photos</a></span><br/>
-                <span style="padding-left: 20px">• <a href="http://www.flickr.com/photos/6footplus/map/">my photo location</a></span><br/>
-                <span style="padding-left: 20px">• <a href="/pics/">archived photos</a></span><br/>
-                <span style="padding-left: 20px">• <a href="/feed/rss">my rss feed</a></span>
+                <span id="padding-left-20">• <a href="http://photos.6footplus.com/recent.php">my photos</a></span><br/>
+                <span id="padding-left-20">• <a href="http://www.flickr.com/photos/6footplus/map/">my photo location</a></span><br/>
+                <span id="padding-left-20">• <a href="/pics/">archived photos</a></span><br/>
+                <span id="padding-left-20">• <a href="/feed/rss">my rss feed</a></span>
             </div>
             <div style="clear:both"></div>
         </div>

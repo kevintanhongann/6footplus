@@ -1,16 +1,7 @@
-function showSpinner() {
-    $('spinner').show();
+function showSpinner(divId) {
+    $(divId).show();
 }
 
-function hideSpinner() {
-    $('spinner').hide();
+function hideSpinner(divId) {
+    $(divId).hide();
 }
-
-Ajax.Responders.register({
-    onLoading: function() {
-        showSpinner();
-    },
-    onComplete: function() {
-        if(!Ajax.activeRequestCount) hideSpinner();
-    }
-});
