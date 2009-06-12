@@ -1,8 +1,5 @@
 package com.sixfootplus.blog
 
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-
 class TwitterJob {
     
     def concurrent = false

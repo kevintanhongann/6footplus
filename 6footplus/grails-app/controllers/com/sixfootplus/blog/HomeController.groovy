@@ -35,8 +35,6 @@ class HomeController {
 
     def ajaxShowComments = {
 
-        Thread.sleep(10000)
-
         def article = BlogArticle.read(params.id)
         render(template: 'comments', model: [article: article, showComments: true])
     }

@@ -2,7 +2,7 @@ package com.sixfootplus.blog
 
 import grails.test.*
 
-class RssServiceTests extends GrailsUnitTestCase {
+class FeedControllerTests extends ControllerUnitTestCase {
     protected void setUp() {
         super.setUp()
     }
