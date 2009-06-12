@@ -3,12 +3,11 @@
  */
 
 function prettyDate(time){
+
     var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," ")),
     localDate = new Date(),
-    diff = (((localDate).getTime() + (localDate.getTimezoneOffset() * 60000) - date.getTime()) / 1000),
+    diff = ((localDate.getTime() + (localDate.getTimezoneOffset() * 60000) - date.getTime()) / 1000),
     day_diff = Math.floor(diff / 86400);
-
-
 			
     if ( isNaN(day_diff) || day_diff < 0)
         return;
