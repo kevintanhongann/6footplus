@@ -8,7 +8,7 @@
 
 <g:form action="upload" method="post" enctype="multipart/form-data">
 	<input type="file" name="myFile" style="color: #333300;"/>
-	<input type="submit" />
+	<input type="submit" value="Submit"/>
 </g:form>
 
 </body>

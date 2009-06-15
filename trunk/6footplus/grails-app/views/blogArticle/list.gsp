@@ -3,6 +3,7 @@
     <meta name="layout" content="simple"/>
 </head>
 <body>
+    <g:link action="create">create an article</g:link><br/><br/>
     <g:if test="${flash.message}">
         <div class="message">${flash.message}</div>
     </g:if>
