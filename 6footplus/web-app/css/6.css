@@ -6,24 +6,24 @@
   .textbg {color: #999966;  font-family: verdana;  font-size: 12px;}
   .heading {font-family: verdana, arial, helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333300 }
   .date{color: #666633;  font-family: verdana;  font-size: 10px;}
-  
+
   a:link {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a:visited {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
   a:hover:visited {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
-  
+
   a.brown:link {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.brown:visited {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.brown:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.brown:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
   a.brown:hover:visited {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
-  
+
   a.light:link {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.light:visited {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.light:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.light:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px;}
-  
+
   a.title:link {color: #333300; font-weight: bold; font-family: verdana, arial, helvetica, sans-serif; font-size: 12px;}
   a.title:visited {color: #333300; font-weight: bold; font-family: verdana, arial, helvetica, sans-serif; font-size: 12px;}
   a.title:active {color: #333300; font-weight: bold; font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px;}
@@ -55,7 +55,7 @@
   #twitter_update_list {margin:5px 5px;text-align:left;padding:5px; list-style:none; font-size: 12px;color: #666633;}
   #twitter_update_list a:link, a:visited {color: #CC3300;font-size: 12px}
   #twitter_update_list li {margin-bottom:20px}
-  
+
   label{
       float: left;
       width: 80px;
@@ -64,12 +64,12 @@
   input, textarea{
       width: 350px;
       margin-bottom: 5px;
-      border: 1px solid #666633; 
-      font-family: Arial; 
-      background: #999960; 
-      font-weight: normal; 
-      font-size: 13px;  
-      color: #ffffff; 
+      border: 1px solid #666633;
+      font-family: Arial;
+      background: #999960;
+      font-weight: normal;
+      font-size: 13px;
+      color: #ffffff;
       padding:4px;
   }
 
@@ -85,22 +85,22 @@
       margin-left: 80px;
       margin-top: 2px;
       width: 160px;
-      color: #666633; 
+      color: #666633;
   }
-  
+
   #submitbutton:hover, #submitbutton a:hover{
       background-color:#666633;
       border:1px solid white;
       color:#ffffff;
   }
-  
+
   .paginateButtons {
       border-bottom: 1px solid #666633;
       padding-bottom: 10px;
       text-align: right;
       margin-bottom: 10px;
   }
-  
+
   .paginateButtons a {
       margin: 0 3px;
       padding: 2px 6px;
@@ -131,6 +131,22 @@
       margin: 5px 0 5px 0;
       padding: 5px 5px 5px 30px
   }
+  div.errors {
+      background: #999966;
+      border: 1px solid #CCCC99;
+      color: #cc0000;
+      margin: 10px 0 15px 0;
+      padding: 5px 0 5px 0;
+  }
+  div.errors ul {
+      list-style: none;
+      padding: 0;
+  }
+  div.errors li {
+      background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+      line-height: 16px;
+      padding-left: 30px;
+  }
   .commentBox {
       border: 1px dashed #CCCC99;
       color: #333300;
@@ -142,7 +158,7 @@
       border-bottom: 1px dashed #CCCC99;
       margin-bottom: 10px;
   }
-  
+
   #outer-container {
       width: 683px;
       margin: 0 auto;
@@ -152,19 +168,19 @@
   #header {
       width: 683px;
       padding-top: 1px;
-      padding-bottom: 8px;      
+      padding-bottom: 8px;
   }
-  
+
   #top-nav {
       width: 683px;
       padding-bottom: 20px;
   }
-  
+
   #footer {
       width: 683px;
-      margin-bottom: 10px; 
+      margin-bottom: 10px;
   }
-  
+
   #footer p {
       padding-left: 20px;
   }
@@ -181,42 +197,40 @@
   }
 
   #footer-right-top {
-      margin-left: 10px; 
-      margin-bottom: 10px; 
+      margin-left: 10px;
+      margin-bottom: 10px;
       border-bottom: 1px dashed #CCCC99;
   }
-  
+
   #footer-right-middle {
-      margin-left: 10px; 
-      margin-bottom: 10px; 
+      margin-left: 10px;
+      margin-bottom: 10px;
       border-bottom: 1px dashed #CCCC99;
   }
 
   #footer-right-middle-left {
-      width:150px; 
+      width:150px;
       float: left;
   }
 
   #footer-right-middle-center {
-      width:150px; 
+      width:150px;
       float: left;
   }
 
   #footer-right-middle-right {
-      width:151px; 
+      width:151px;
       float: left;
   }
 
   #content-container {
       width: 683px;
   }
-  
+
   #footer-right-bottom {
-      margin-left: 10px; 
+      margin-left: 10px;
   }
 
   #padding-left-20 {
       padding-left: 20px;
   }
-  
-}
