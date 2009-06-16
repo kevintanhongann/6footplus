@@ -42,7 +42,7 @@
                 <span id="padding-left-20">• <a href="http://photos.6footplus.com/recent.php">my photos</a></span><br/>
                 <span id="padding-left-20">• <a href="http://www.flickr.com/photos/6footplus/map/">my photo location</a></span><br/>
                 <span id="padding-left-20">• <a href="/pics/">archived photos</a></span><br/>
-                <span id="padding-left-20">• <a href="/feed/rss">my rss feed</a></span>
+                <span id="padding-left-20">• <a href="/searchable">search</a>&nbsp;<img src="/images/search.png" height="12"/></span>
             </div>
             <div style="clear:both"></div>
         </div>

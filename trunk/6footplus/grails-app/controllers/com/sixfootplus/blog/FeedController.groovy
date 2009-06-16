@@ -8,11 +8,11 @@ class FeedController {
     def max = 10
     def sort = "dateCreated"
     def order = "desc"
+    def host = holder.config?.grails?.serverURL
 
     def atom = {
         render(feedType: "atom") {
-            title = "6footplus.com - ATOM"
-            link = holder.config.grails.serverURL
+            title = "6footplus.com - blog (atom feed)"
 
             BlogArticle.list(max: max, sort: sort, order: order).each() {
                 def article = it
@@ -31,9 +31,9 @@ class FeedController {
 
     def rss = {
         render(feedType:"rss", feedVersion:"2.0") {
-            title = "6footplus.com - RSS"
-            link = holder.config.grails.serverURL
-            description = "blog entries by the 6footplus fella"
+            title = "6footplus.com - blog (rss feed)"
+            description = "personal blog entries by andreas nerlich"
+            link = host
 
             BlogArticle.list(max: max, sort: sort, order: order).each() {
                 def article = it

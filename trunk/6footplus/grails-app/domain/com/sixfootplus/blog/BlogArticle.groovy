@@ -21,6 +21,10 @@ class BlogArticle {
         status(nullable: false)
         author(nullable: false)
     }
+
+    String toString() {
+        return "${subject} : ${body} (${dateCreated})"
+    }
 }
 
 enum ArticleStatus {
@@ -28,3 +32,4 @@ enum ArticleStatus {
     PUBLISHED,
     DISABLED
 }
+
