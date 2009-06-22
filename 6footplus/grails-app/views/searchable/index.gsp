@@ -87,7 +87,7 @@
                     <g:each var="result" in="${searchResult.results}" status="index">
                         <div class="result">
                             <g:set var="link" value="${createLink(controller: 'home', action: 'show', id: result.id)}" />
-                            <div><a href="${link}">${result.subject}</a></div>
+                            <div><a href="${link}">${result.subject}</a> <span class="date">(<g:formatDate format="dd MMM yyyy" date="${result.dateCreated}"/>)</span></div>
                             <div style="margin-top: 10px">${result.body}</div>
                             <div style="clear:both"></div>
                             <div style="margin-top: 10px" class="divider"></div>
