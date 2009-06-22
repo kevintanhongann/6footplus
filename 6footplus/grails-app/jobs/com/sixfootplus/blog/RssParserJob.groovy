@@ -10,7 +10,7 @@ class RssParserJob {
     def concurrent = false
     def cronExpression = "0 0/1 * * * ?"
     def feeds = [
-        vimeo:"http://vimeo.com/user482960/videos/rss", 
+        vimeo:"http://vimeo.com/sixfootplus/videos/rss",
         flickr:"http://api.flickr.com/services/feeds/photos_public.gne?id=26648553@N05&lang=en-us&format=rss_200"]
     
     def execute() {
@@ -47,7 +47,10 @@ class RssParserJob {
                 def date = formatter.parse(item.pubDate.text())
             
                 RssFeed feed = new RssFeed(producer:mapFeed.key, title:item.title.text(), description:description, link:item.link.text(), thumbnail:thumbnail, pubDate:date)
-                feed.save();
+                
+                if(!feed.save()){
+                    println "Could not save " + mapFeed.key + " rss item : " + item.title;
+                }
             }
         }
     }

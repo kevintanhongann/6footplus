@@ -76,8 +76,13 @@ class BlogArticleController {
     }
 
     def show = {
+
         def article = BlogArticle.get(params.id)
-        return [article: article]
+        if(article){
+            return [article: article]
+        } else {
+            flash.message = "Article not found with id ${params.id}"
+        }
     }
 
     def delete = {

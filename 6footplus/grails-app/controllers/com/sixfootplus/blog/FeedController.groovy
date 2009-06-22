@@ -12,7 +12,7 @@ class FeedController {
 
     def atom = {
         render(feedType: "atom") {
-            title = "6footplus.com - blog (atom feed)"
+            title = "6footplus.com - blog"
 
             BlogArticle.list(max: max, sort: sort, order: order).each() {
                 def article = it
@@ -21,8 +21,8 @@ class FeedController {
                     title = "${article.subject}"
                     link = host + "/home/show/${article.id}"
                     publishedDate = article.dateCreated
-                    if(article.body.length() > 39){
-                        article.body.substring(0, 40) + "..."
+                    if(article.body.length() < 128){
+                        article.body
                     }
                 }
             }
@@ -31,7 +31,7 @@ class FeedController {
 
     def rss = {
         render(feedType:"rss", feedVersion:"2.0") {
-            title = "6footplus.com - blog (rss feed)"
+            title = "6footplus.com - blog"
             description = "personal blog entries by andreas nerlich"
             link = host
 
@@ -42,8 +42,8 @@ class FeedController {
                     title = "${article.subject}"
                     link = host + "/home/show/${article.id}"
                     publishedDate = article.dateCreated
-                    if(article.body.length() > 39){
-                        article.body.substring(0, 40) + "..."
+                    if(article.body.length() < 128){
+                        article.body
                     }
                 }
             }

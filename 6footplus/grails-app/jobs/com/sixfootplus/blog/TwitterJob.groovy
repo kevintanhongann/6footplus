@@ -13,7 +13,7 @@ class TwitterJob {
         
         if(!messages.isEmpty()) {
             TwitterStatus.findAll()*.delete();
-            println "All twitter statuses deleted!"
+            println "Deleted all existing twitter entries!"
         }
 
         (0..< messages.size()).each {
@@ -33,9 +33,10 @@ class TwitterJob {
             cal.set(Calendar.MILLISECOND, mbCal.get(Calendar.MILLISECOND))
 
             def twitterStatus = new TwitterStatus(id:item.id, text:item.text, createdAt:cal.getTime())
-            twitterStatus.save()
-
-            println "Saved twitter status!"
+            
+            if(!twitterStatus.save()){
+                println "Could not save twitter status : " + item.text;
+            }
         }
     }
 }
