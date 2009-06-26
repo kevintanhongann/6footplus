@@ -49,4 +49,4 @@
     </div>
 </div>
 <div style="clear:both; margin-top: 10px; margin-bottom: 10px; border-bottom: 1px solid #666633;">&nbsp;</div>
-<p class="date" style="text-align: right">built using groovy & grails</p>
+<p class="date" style="text-align: right">created with groovy & grails | <a class="brown_s" href="http://code.google.com/p/6footplus/">source code</a> | <a class="brown_s" href="http://birthofnations.kicks-ass.org:8888/hudson/job/6footplus%20Blog/">continuous integration</a></p>
