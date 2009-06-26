@@ -19,6 +19,12 @@
   a.brown:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
   a.brown:hover:visited {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
 
+  a.brown_s:link {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; text-decoration: none}
+  a.brown_s:visited {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; text-decoration: none}
+  a.brown_s:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; text-decoration: none}
+  a.brown_s:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; }
+  a.brown_s:hover:visited {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; }
+
   a.light:link {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.light:visited {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
   a.light:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
