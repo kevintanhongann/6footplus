@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta name="layout" content="simple"/>
+        <title>6footplus.com <g:if test="${article}">- ${article.subject?.encodeAsHTML()}</g:if></title>
     </head>
     <body>
         <g:if test="${flash.message}">
