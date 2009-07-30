@@ -9,6 +9,7 @@ class ContactController {
     }
 
     def showForm = {
+        response.characterEncoding='UTF-8'
         render(template: 'contactForm', model:[contactForm: new ContactForm()])
     }
 
