@@ -17,7 +17,7 @@ class HomeTest extends AbstractWebTesting {
             verifyText  'my recent videos'
             verifyText  'my recent photos'
             verifyText  'my recent twitpics'
-            verifyText  'my contact details'
+            verifyText  'my details'
             verifyText  'my recent articles'
             verifyText  'more stuff'
         }

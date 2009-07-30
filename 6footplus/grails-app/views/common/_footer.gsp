@@ -30,8 +30,8 @@
         </div>
         <div id="footer-right-bottom">
             <div id="footer-right-middle-left">
-                <div class="h1" style="padding-bottom: 10px">my contact details</div>
-                <div style="padding-left: 20px; float:left; width:150px">Andreas Nerlich<br />Web Developer<br />Munich, Germany<br />me&#64;6footplus.com<br /></div>
+                <div class="h1" style="padding-bottom: 10px">my details</div>
+                <div style="padding-left: 20px; float:left; width:150px">Andreas Nerlich<br />Web Developer<br />Munich, Germany<br /><a href="/contact">contact me</a><br /></div>
             </div>
             <div id="footer-right-middle-center">
                 <div style="padding-bottom: 10px"><a href="${createLink(controller:'home',action:'index',params:[max:5])}" class="title" title="View the last 5 articles on a single page">my recent articles</a></div>
