@@ -17,7 +17,7 @@
     <p:javascript src="spinner" />
     <g:render template="/common/metrics"/>
 </head>
-<body>
+<body id="${pageProperty(name:'body.id')}">
 <div id="outer-container">
     <g:render template="/common/header"/>
     <div id="content-container">

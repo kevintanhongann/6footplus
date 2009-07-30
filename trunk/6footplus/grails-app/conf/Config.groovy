@@ -9,6 +9,19 @@
 // if(System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
+//
+//grails {
+//    mail {
+//        host = "smtp.gmail.com"
+//        port = 465
+//        username = "xxx@gmail.com"
+//        password = "xxx"
+//        props = ["mail.smtp.auth":"true",
+//              "mail.smtp.socketFactory.port":"465",
+//              "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+//              "mail.smtp.socketFactory.fallback":"false"]
+//   }
+//}
 
 uiperformance.enabled = true
 uiperformance.processImages = false
@@ -36,16 +49,23 @@ grails.converters.encoding="UTF-8"
 // enabled native2ascii conversion of i18n properties files
 grails.enable.native2ascii = true
 
+contactme.to.address = "6footplus@gmail.com"
+
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
         grails.serverURL = "http://www.6footplus.com"
         upload.dir = "/home/anerlich/public_html/ROOT/images/"
+        grails.mail.default.from="me@6footplus.com"
     }
     development {
         grails.serverURL = "http://localhost:8080"
         upload.dir = "/Users/andisa/Desktop/"
-    }    
+        grails.mail.disabled = true
+    }
+    test {
+        grails.mail.disabled = true
+    }
 }
 
 // log4j configuration
@@ -69,4 +89,5 @@ log4j = {
 	       'org.hibernate'
 
     warn   'org.mortbay.log'
-}    
+}
+
