@@ -1,6 +1,8 @@
 package com.sixfootplus.blog
 
-class BlogArticle {
+import org.grails.taggable.*
+
+class BlogArticle implements Taggable {
 
     static searchable = true
 

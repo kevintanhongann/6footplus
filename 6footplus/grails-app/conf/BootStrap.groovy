@@ -83,6 +83,11 @@ class BootStrap {
             }
         }
 
+        //add some dummy tags
+        BlogArticle.findAll().each {
+            it.addTag('someTag')
+        }
+
         log.info "Blog Domain Objects created!"
     }
 

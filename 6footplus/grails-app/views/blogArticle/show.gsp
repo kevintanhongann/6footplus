@@ -12,6 +12,9 @@
             <div style="clear:both; padding-top: 10px; padding-bottom: 10px">
                 <g:each var="link" in="${article.links}">• <a class="brown" href="${link.url}">${link.label}</a>&nbsp;</g:each>
             </div>
+            <div style="clear:both" id="tag_area_${article.id}">
+                <g:render template="tags" model="[article:article]" />
+            </div>
         </g:if>
     </body>
 </html>
