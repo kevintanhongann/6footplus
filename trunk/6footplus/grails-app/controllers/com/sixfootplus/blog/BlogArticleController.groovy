@@ -16,10 +16,10 @@ class BlogArticleController {
         Map model = [:]
 
         model.articles = BlogArticle.findAll(
-                [max: 10,
-                        offset: params.offset,
-                        sort: 'dateCreated',
-                        order: 'desc'])
+            [max: 10,
+                offset: params.offset,
+                sort: 'dateCreated',
+                order: 'desc'])
         model.blogCount = BlogArticle.count()
 
         return model
@@ -97,5 +97,40 @@ class BlogArticleController {
             flash.message = "Article not found with id ${params.id}"
             redirect(action: list)
         }
+    }
+
+    def ajaxSaveTag = {
+
+        //initialize return object
+        Map model = [:]
+
+        //load article
+        BlogArticle article = BlogArticle.get(params.articleId)
+
+        if(params.tag){
+            article.addTag(params.tag)
+        }
+        
+        model.article = article
+
+        render(template: 'tags', model: model)
+    }
+
+    def ajaxDeleteTag = {
+
+        //initialize return object
+        Map model = [:]
+
+        //load article
+        BlogArticle article = BlogArticle.get(params.id)
+
+        if(params.tag){
+            article.removeTag(params.tag)
+            article.save(flush:true)
+        }
+
+        model.article = article
+
+        render(template: 'tags', model: model)
     }
 }
