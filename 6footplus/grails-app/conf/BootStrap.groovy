@@ -32,12 +32,12 @@ class BootStrap {
 
         // create an article (in admin-role)
         BlogArticle article = new BlogArticle()
-        article.subject = 'Java Magazin bringt Grails Tutorial'
-        article.body = '''Es ist soweit:
-  In der neusten Ausgabe des Java Magazins findet sich der erste Teil eines Grails Tutorials.
-  Insgesamt wird es zwei weitere Teile geben.
-  Derr aufmerksame Leser wird am Ende des Tutorial in der Lage sein, selber professionelle
-  Grails Applikationen zu schreiben!
+        article.subject = 'We will rock you!'
+        article.body = '''Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       '''
         article.author = user
         article.save()
@@ -85,7 +85,7 @@ class BootStrap {
 
         //add some dummy tags
         BlogArticle.findAll().each {
-            it.addTag('someTag')
+            it.addTag('techie')
         }
 
         log.info "Blog Domain Objects created!"
