@@ -11,42 +11,38 @@ class FeedController {
     def host = holder.config?.grails?.serverURL
 
     def atom = {
-        render(feedType: "atom") {
-            title = "6footplus.com - blog"
+        
+        render(feedType: params.type ?: "atom") {
 
-            BlogArticle.list(max: max, sort: sort, order: order).each() {
+            title = "6footplus.com"
+            description = "Latest ${max} articles by Andreas Nerlich"
+            link = host
+
+            def list
+
+            if(!params.id){
+                list = BlogArticle.list(max: max, sort: sort, order: order)}
+            else {
+                list = BlogArticle.findAllByTag(params.id, [sort: sort, order: order])
+                description = "Articles by Andreas Nerlich tagged as '{$params.id}'"
+            }
+
+            list.each() {
                 def article = it
                 entry(it.subject) {
                     author = "Andreas Nerlich"
                     title = "${article.subject}"
                     link = host + "/home/show/${article.id}"
                     publishedDate = article.dateCreated
-                    if(article.body.length() < 128){
-                        article.body
-                    }
+                    article.body
                 }
             }
         }
     }
 
     def rss = {
-        render(feedType:"rss", feedVersion:"2.0") {
-            title = "6footplus.com - blog"
-            description = "personal blog entries by andreas nerlich"
-            link = host
 
-            BlogArticle.list(max: max, sort: sort, order: order).each() {
-                def article = it
-                entry(it.subject) {
-                    author = "Andreas Nerlich"
-                    title = "${article.subject}"
-                    link = host + "/home/show/${article.id}"
-                    publishedDate = article.dateCreated
-                    if(article.body.length() < 128){
-                        article.body
-                    }
-                }
-            }
-        }
+        redirect(action:atom, params:["type":"rss", "id":params.id])
+
     }
 }
