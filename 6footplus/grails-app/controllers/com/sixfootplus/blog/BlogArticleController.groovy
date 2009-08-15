@@ -108,7 +108,7 @@ class BlogArticleController {
         BlogArticle article = BlogArticle.get(params.articleId)
 
         if(params.tag){
-            article.addTag(params.tag)
+            article.parseTags(params.tag)
         }
         
         model.article = article
