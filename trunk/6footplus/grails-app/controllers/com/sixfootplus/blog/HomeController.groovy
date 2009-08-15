@@ -19,8 +19,10 @@ class HomeController {
             }
             list = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED,
                 [max: params.max, offset: params.offset, sort: 'dateCreated',order: 'desc'])
-            total = list.size
+            model.blogCount = BlogArticle.countByStatus(ArticleStatus.PUBLISHED)
+
         } else {
+
             if(!params.max){
                 params.max = 10
             }
