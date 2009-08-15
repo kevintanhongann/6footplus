@@ -21,10 +21,13 @@ class FeedController {
             def list
 
             if(!params.id){
-                list = BlogArticle.list(max: max, sort: sort, order: order)}
+                list = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED, [max: max, sort: sort, order: order])}
             else {
-                list = BlogArticle.findAllByTag(params.id, [sort: sort, order: order])
-                description = "Articles by Andreas Nerlich tagged as '{$params.id}'"
+                list = BlogArticle.findAllByTagWithCriteria(params.id,  {
+                        eq('status', ArticleStatus.PUBLISHED)
+                        order(sort, order)
+                    })
+                description = "Articles by Andreas Nerlich tagged as '$params.id'"
             }
 
             list.each() {
@@ -43,6 +46,5 @@ class FeedController {
     def rss = {
 
         redirect(action:atom, params:["type":"rss", "id":params.id])
-
     }
 }
