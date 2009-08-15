@@ -23,8 +23,10 @@ class HomeControllerTests extends GrailsUnitTestCase {
         def articles = model.articles
         def count = model.blogCount
 
+        println 'l daklsdklaskdlkl dklakd : ' + count
+
         assertEquals("Expected count to match!", 15, count)
-        assertEquals("Expected single article!", 1, articles.size())
+        assertEquals("Expected single article!", 3, articles.size())
     }
 
     void testRecent() {
