@@ -1,5 +1,3 @@
-<g:if test="${flash.message}"><div class="message">${flash.message}</div></g:if>
-
 <g:if test="${article?.tags}">tags: 
     <g:each var="tag" in="${article.tags}">• ${tag} <g:remoteLink action="ajaxDeleteTag" id="${article?.id}" params="'tag=${tag}'" update="tag_area_${article?.id}" class="light">x</g:remoteLink>&nbsp;</g:each>
 </g:if>
