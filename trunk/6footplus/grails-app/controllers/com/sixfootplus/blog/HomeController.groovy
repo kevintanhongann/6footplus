@@ -9,12 +9,38 @@ class HomeController {
     def index = {
         
         Map model = [:]
-        model.articles = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED,
-            [max: params.max ?: 1,
-                offset: params.offset,
-                sort: 'dateCreated',
-                order: 'desc'])
-        model.blogCount = BlogArticle.countByStatus(ArticleStatus.PUBLISHED)
+        
+        def list
+        def total
+
+        if(!params.tag){
+            if(!params.max){
+                params.max = 3
+            }
+            list = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED,
+                [max: params.max, offset: params.offset, sort: 'dateCreated',order: 'desc'])
+            total = list.size
+        } else {
+            if(!params.max){
+                params.max = 10
+            }
+            //due to tag plugin findAllByTagAndStatus is not possible
+            list = BlogArticle.findAllByTagWithCriteria(params.tag,  {
+                    eq('status', ArticleStatus.PUBLISHED)
+                    order("dateCreated", "desc")
+                })
+
+            total = list.size
+
+            def max = params.max as int
+            def offset = ((params.offset as int) ?: 0)
+
+            list = list[offset..(((offset + max) > total) ? total : (offset + max)) - 1]
+        }
+        
+        model.articles = list
+        model.blogCount = total
+
         return model
     }
     
