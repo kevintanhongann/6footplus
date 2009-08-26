@@ -86,9 +86,15 @@
                 <div class="results">
                     <g:each var="result" in="${searchResult.results}" status="index">
                         <div class="result">
-                            <g:set var="link" value="${createLink(controller: 'home', action: 'show', id: result.id)}" />
-                            <div><a href="${link}">${result.subject}</a> <span class="date">(<g:formatDate format="dd MMM yyyy" date="${result.dateCreated}"/>)</span></div>
-                            <div style="margin-top: 10px">${result.body}</div>
+                            <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
+                            <g:if test="${className == 'BlogArticle'}">
+                                <g:set var="link" value="${createLink(controller: 'home', action: 'show', id: result.id)}" />
+                                <div><a href="${link}">${result.subject}</a> <span class="date">(<g:formatDate format="dd MMM yyyy" date="${result.dateCreated}"/>)</span></div>
+                                <div style="margin-top: 10px">${result.body}</div>
+                            </g:if>
+                            <g:if test="${className =='Tag'}">
+                                <div><g:link controller="home" params="[tag:result]">${result}</g:link> of type tag</div>
+                            </g:if>
                             <div style="clear:both"></div>
                             <div style="margin-top: 10px" class="divider"></div>
                         </div>
