@@ -10,7 +10,7 @@ class HomeController {
         
         Map model = [:]
         
-        def list
+        def list = []
         def total
 
         if(!params.tag){
@@ -31,13 +31,14 @@ class HomeController {
                     eq('status', ArticleStatus.PUBLISHED)
                     order("dateCreated", "desc")
                 })
-
-            total = list.size
+            total = list.size()
 
             def max = params.max as int
             def offset = ((params.offset as int) ?: 0)
 
-            list = list[offset..(((offset + max) > total) ? total : (offset + max)) - 1]
+            if(total > 0){
+                list = list[offset..(((offset + max) > total) ? total : (offset + max)) - 1]
+            }
         }
         
         model.articles = list
