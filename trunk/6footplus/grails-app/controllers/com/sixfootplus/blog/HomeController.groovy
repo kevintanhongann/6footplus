@@ -21,6 +21,10 @@ class HomeController {
                 [max: params.max, offset: params.offset, sort: 'dateCreated',order: 'desc'])
             total = BlogArticle.countByStatus(ArticleStatus.PUBLISHED)
 
+            if(total < 1){
+                flash.message = "No articles found!"
+            }
+
         } else {
 
             if(!params.max){
@@ -38,6 +42,8 @@ class HomeController {
 
             if(total > 0){
                 list = list[offset..(((offset + max) > total) ? total : (offset + max)) - 1]
+            } else {
+                flash.message = "No articles found for tag '${params.tag}'"
             }
         }
         
