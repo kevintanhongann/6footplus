@@ -2,7 +2,7 @@
 <html>
 <head>
     <title><g:layoutTitle default="6footplus.com"/></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="verify-v1" content="LzS4v2JTQ/hNNaHxdsIV2M1lj1zm/lx/O3oxyvB7Wls=" >
     <link rel="SHORTCUT ICON" href="${createLinkTo(dir: 'images', file: 'favicon.ico')}"/>
     <p:css name='lightbox'/>
