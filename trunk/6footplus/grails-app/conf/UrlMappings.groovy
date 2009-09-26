@@ -18,9 +18,7 @@ class UrlMappings {
         "/$controller/$action?/$id?" {}
 
         // error definition
-        "500"(view:'/error/error')
-        
-        "404"(view:'/error/404')
+        "500"(controller: 'error', action : 'error')
+        "404"(controller: 'error', action : 'notfound')
     }
-
 }
