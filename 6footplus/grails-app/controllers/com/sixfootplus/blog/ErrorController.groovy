@@ -14,8 +14,6 @@ class ErrorController {
         def uri = request.'javax.servlet.error.request_uri'
         if(redirects.find{it == uri}){
             redirect(controller: "home", action: "index")
-        } else {
-            render(view:"/error/404")
         }
     }
 }
