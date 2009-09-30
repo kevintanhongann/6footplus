@@ -20,11 +20,19 @@ class ContactController {
         }
 
         if (captchaValid && !contactForm.hasErrors() ) {
-            sendMail {
-                to grailsApplication.config.contactme.to.address
-                from contactForm.email
-                subject "${(grailsApplication.config.contactme.subject.prefix ?: "Contact Me:")} ${contactForm.subject}"
-                body( view: grailsApplication.config.contactme.email.view ?: "emailBody", model:[contactForm:contactForm])
+
+            try {
+                sendMail {
+                    to grailsApplication.config.contactme.to.address
+                    from contactForm.email
+                    subject "${(grailsApplication.config.contactme.subject.prefix ?: "Contact Me:")} ${contactForm.subject}"
+                    body( view: grailsApplication.config.contactme.email.view ?: "emailBody", model:[contactForm:contactForm])
+                }
+
+            } catch (Exception ex){
+                contactForm.errors.rejectValue('email', null, "Unable to send email for given address. Please verify!")
+                render(template: 'contactForm', model:[contactForm: contactForm])
+                return
             }
 
             render(template: 'thanks', model:[contactForm:contactForm])
