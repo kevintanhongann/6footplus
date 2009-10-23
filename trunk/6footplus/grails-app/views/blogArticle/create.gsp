@@ -16,6 +16,8 @@
             <input type="text" size="74" id='subject' name='subject' value=""/><br/>
             <label for='body'>Body:</label>
             <textarea style="width: 550px; height: 400px" name='body'></textarea><br/>
+            <label for='body'>Teaser:</label>
+            <textarea style="width: 550px; height: 200px" name='body'></textarea><br/>
             <label for='category'>Author:</label>
             <g:select from="${users}" optionKey="id" optionValue="username" name='author.id' value=""/><br/>
             <label for='category'>Status:</label>

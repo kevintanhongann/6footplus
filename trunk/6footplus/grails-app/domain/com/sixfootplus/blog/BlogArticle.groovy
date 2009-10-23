@@ -9,6 +9,7 @@ class BlogArticle implements Taggable {
     //properties
     String subject
     String body
+    String teaser
     Date dateCreated
     Date lastUpdated
     ArticleStatus status = ArticleStatus.UNPUBLISHED
@@ -20,6 +21,7 @@ class BlogArticle implements Taggable {
     static constraints = {
         subject(blank: false, nullable: false, size: 5..200, unique: false)
         body(blank: false, nullable: false, size: 5..10000)
+        teaser(blank: true, nullable: true, size: 5..5000)
         status(nullable: false)
         author(nullable: false)
     }

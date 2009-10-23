@@ -20,7 +20,7 @@
                         </g:each>
                     </g:if>
                 </span>
-                <div style="margin-top:10px;">${article.body}</div>
+                <g:render template="content" model="[article:article]" />
                 <div style="clear:both; padding-top: 10px; padding-bottom: 10px">
                     <g:each var="link" in="${article.links}">• <a class="brown" href="${link.url}">${link.label}</a>&nbsp;</g:each>
                 </div>

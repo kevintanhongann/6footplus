@@ -13,7 +13,7 @@
             <div style="clear:both; padding-top: 10px; padding-bottom: 10px">
                 <g:each var="link" in="${article?.links}">• <a class="brown" href="${link?.url}">${link?.label}</a>&nbsp;</g:each>
             </div>
-            <div style="clear:both" id="comment_area_${article?.id}">
+            <div style="clear:both; margin-bottom:100px" id="comment_area_${article?.id}">
                 <g:render template="comments" model="[article:article]" />
             </div>
         </g:if>
