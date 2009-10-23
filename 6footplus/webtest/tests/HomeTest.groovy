@@ -12,7 +12,7 @@ class HomeTest extends AbstractWebTesting {
             verifyText  'Beitrag Nr.1'
             verifyText  'Dies ist ein Testeintrag mit der Nr.1'
             verifyText  'comments (0)'
-            verifyText  'Previous'
+            verifyText  'Older articles'
             verifyText  'my recent tweets'
             verifyText  'my recent videos'
             verifyText  'my recent photos'
@@ -35,9 +35,9 @@ class HomeTest extends AbstractWebTesting {
 
         group(description: 'Paginate list of articles'){
             invoke      '/'
-            clickLink   'Previous'
+            clickLink   'Older articles'
             verifyText  'Beitrag Nr.3'
-            clickLink   'Next'
+            clickLink   'Newer articles'
             verifyText  'Beitrag Nr.1'
         }
 

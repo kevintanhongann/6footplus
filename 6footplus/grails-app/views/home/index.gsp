@@ -32,7 +32,7 @@
         </g:each>
 
         <div class="paginateButtons">
-            <g:paginate params="${params}" next="Previous" prev="Next" maxsteps="2" total="${blogCount}"/>
+            <g:paginate params="${params}" next="Older articles" prev="Newer articles" maxsteps="2" total="${blogCount}"/>
         </div>
         
     </body>
