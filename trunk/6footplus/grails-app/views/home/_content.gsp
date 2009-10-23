@@ -3,7 +3,8 @@
 
 <div style="margin-top:10px;">
     <g:if test="${teaser}">
-        ${teaser}...[<g:link action="show" id="${article.id}">read more</g:link>]
+        ${teaser}
+        <div style="padding-top: 10px">• <g:link action="show" id="${article.id}">read more</g:link> »</div>
     </g:if>
     <g:else>${body}</g:else>
 </div>
