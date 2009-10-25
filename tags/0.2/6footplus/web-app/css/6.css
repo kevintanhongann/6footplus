@@ -1,0 +1,257 @@
+  body {background-color: #999966; text-align: center; font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px; color: #333300;}
+  td {font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px; color: #333300}
+  .textdark {color: #666633;  font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px; text-decoration: none}
+  .textdark2 {color: #333300;  font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px; text-decoration: none; margin-bottom: 10px;}
+  .textlight {color: #FFFFCC;  font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px; text-decoration: none}
+  .textbg {color: #999966;  font-family: verdana;  font-size: 12px;}
+  .heading {font-family: verdana, arial, helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333300 }
+  .date{color: #666633;  font-family: verdana;  font-size: 10px;}
+
+  a:link {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a:visited {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
+  a:hover:visited {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
+
+  a.brown:link {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.brown:visited {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.brown:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.brown:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
+  a.brown:hover:visited {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; }
+
+  a.brown_s:link {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; text-decoration: none}
+  a.brown_s:visited {color: #ffcc99;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; text-decoration: none}
+  a.brown_s:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; text-decoration: none}
+  a.brown_s:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; }
+  a.brown_s:hover:visited {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; }
+
+  a.light:link {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.light:visited {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.light:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.light:hover {color: #ffffff; text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px;}
+
+  a.title:link {color: #333300; font-weight: bold; font-family: verdana, arial, helvetica, sans-serif; font-size: 12px;}
+  a.title:visited {color: #333300; font-weight: bold; font-family: verdana, arial, helvetica, sans-serif; font-size: 12px;}
+  a.title:active {color: #333300; font-weight: bold; font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px;}
+  a.title:hover {color: #CC3300; font-weight: bold; font-family: verdana, arial, helvetica, sans-serif; font-size: 12px;}
+  a.dark:link {color: #666633;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.dark:visited {color: #666633;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.dark:active {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.dark:hover {text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px;color: #CC3300}
+  a.menu:link {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.menu:visited {color: #ffffff;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.menu:active {color: #CC3300;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px; text-decoration: none}
+  a.menu:hover {text-decoration: none;  font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 12px;color: #CC3300}
+  .h1 {color: #333300; font-weight: bold; font-size: 12px;}
+  .lineLight{border-bottom:1px dashed #cccccc;}
+  .iform {color: #ffffff; font-family: Arial; background: #999966; font-weight: normal; font-size: 12px; }
+  .commentForm {color: #ffffff; font-family: Arial; background: #999966; font-weight: normal; font-size: 12px; }
+  table.commentFormTable {border: 1px solid white; width: 100%; background-color: #666633;}
+  table.commentFormTable td {padding: 5px 5px 5px 5px;}
+  table.commentTable {border: 1px solid #CCCC99; width: 100%; background-color: #999966;}
+  table.commentTable td {text-align: left; vertical-align: top; color: #333300; font-size: 12px;}
+  table.commentTable td a {color: #333300; font-size: 12px;}
+  table.commentTable td a:visited {color: #333300; font-size: 12px;}
+  table.commentTable td a:hover {text-decoration: none; color: #CC3300; font-size: 12px;}
+  table.guestbooklist {border-collapse: collapse; margin-top: 10px; width: 90%;}
+  table.guestbooklist td {padding-left: 0px; padding-top: 5px; font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px; color: #666633}
+  table.guestbooklist td.seperator {border-bottom:1px dashed white;padding-bottom:10px}
+  table.guestbookform td {padding-left: 3px; font-family: verdana, arial, helvetica, sans-serif;  font-size: 12px; color: #666633}
+  table.guestbookform {color: #ffffff; font-family: Arial; background: #666633; font-weight: normal; font-size: 12px;}
+  #twitter_update_list {margin:5px 5px;text-align:left;padding:5px; list-style:none; font-size: 12px;color: #666633;}
+  #twitter_update_list a:link, a:visited {color: #CC3300;font-size: 12px}
+  #twitter_update_list li {margin-bottom:20px}
+
+  label{
+      float: left;
+      width: 80px;
+  }
+
+  input, textarea{
+      width: 350px;
+      margin-bottom: 5px;
+      border: 1px solid #666633;
+      font-family: Arial;
+      background: #999960;
+      font-weight: normal;
+      font-size: 13px;
+      color: #ffffff;
+      padding:4px;
+  }
+
+  textarea{
+      height: 150px;
+  }
+
+  .boxes{
+      width: 1em;
+  }
+
+  #submitbutton {
+      margin-left: 80px;
+      margin-top: 2px;
+      width: 160px;
+      color: #666633;
+  }
+
+  #submitbutton:hover, #submitbutton a:hover{
+      background-color:#666633;
+      border:1px solid white;
+      color:#ffffff;
+  }
+
+  .paginateButtons {
+      border-bottom: 1px solid #666633;
+      padding-bottom: 10px;
+      text-align: right;
+      margin-bottom: 10px;
+  }
+
+  .paginateButtons a {
+      margin: 0 3px;
+      padding: 2px 6px;
+      text-decoration: none;
+      font-weight: bold;
+  }
+
+  .paginateButtons a:hover {
+      text-decoration:underline;
+      font-weight: bold;
+  }
+
+  .paginateButtons span {
+      padding: 2px 3px;
+      font-weight: bold;
+  }
+  .message {
+      background: #999966 url(../images/skin/information.png) 8px 50% no-repeat;
+      border: 1px solid #CCCC99;
+      color: #CC3300;
+      margin: 5px 0 5px 0;
+      padding: 5px 5px 5px 30px
+  }
+  .error {
+      background: #999966 url(../images/skin/exclamation.png) 8px 50% no-repeat;
+      border: 1px solid #CCCC99;
+      color: #CC3300;
+      margin: 5px 0 5px 0;
+      padding: 5px 5px 5px 30px
+  }
+  div.errors {
+      background: #999966;
+      border: 1px solid #CCCC99;
+      color: #cc0000;
+      margin: 10px 0 15px 0;
+      padding: 5px 0 5px 0;
+  }
+  div.errors ul {
+      list-style: none;
+      padding: 0;
+  }
+  div.errors li {
+      background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+      line-height: 16px;
+      padding-left: 30px;
+  }
+  .commentBox {
+      border: 1px dashed #CCCC99;
+      color: #333300;
+      margin: 10px 0 10px 0;
+      padding: 5px 5px 5px 5px
+  }
+
+  .divider {
+      border-bottom: 1px dashed #CCCC99;
+      margin-bottom: 10px;
+  }
+
+  #outer-container {
+      width: 683px;
+      margin: 0 auto;
+      text-align: left;
+  }
+
+  #header {
+      width: 683px;
+      padding-top: 1px;
+      padding-bottom: 8px;
+  }
+
+  #top-nav {
+      width: 683px;
+      padding-bottom: 20px;
+  }
+
+  #footer {
+      width: 683px;
+      margin-bottom: 10px;
+  }
+
+  #footer p {
+      padding-left: 20px;
+  }
+
+  #footer-left {
+      width: 222px;
+      background: #666633;
+      float: left;
+  }
+
+  #footer-right {
+      width: 461px;
+      float: right;
+  }
+
+  #footer-right-top {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #CCCC99;
+  }
+
+  #footer-right-middle {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #CCCC99;
+  }
+
+  #footer-right-middle-left {
+      width:150px;
+      float: left;
+  }
+
+  #footer-right-middle-center {
+      width:150px;
+      float: left;
+  }
+
+  #footer-right-middle-right {
+      width:151px;
+      float: left;
+  }
+
+  #content-container {
+      width: 683px;
+  }
+
+  #footer-right-bottom {
+      margin-left: 10px;
+  }
+
+  #padding-left-20 {
+      padding-left: 20px;
+  }
+
+  #tag-form {
+      margin-top: 20px;
+  }
+
+  #tag-form .button {
+      width: 60px;
+      color: #666633;
+  }
+
+  #tag-form .button:hover, .button a:hover{
+      background-color:#666633;
+      border:1px solid white;
+      color:#ffffff;
+  }
