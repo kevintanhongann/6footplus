@@ -10,7 +10,7 @@ class SmsTest extends AbstractWebTesting {
         group(description:'Invoke SMS page') {
             invoke      '/sms'
             setInputField(name:"message", value:"a sms message")
-            setInputField(name:"captcha", value:"12")
+            setInputField(name:"captcha", value:"")
             clickButton(label:"Send")
             verifyXPath xpath:  "/html/body/div[@id='outer-container']/div[@id='content-container']/div[@id='smsFormWrapper']/div[@class='errorsms']",
                         text:   'Incorrect Maths addition answer'
