@@ -19,8 +19,6 @@ class SmsControllerTests extends GrailsUnitTestCase {
     void testIndex() {
 
         sc.index()
-
-        assert sc.response.contentAsString
     }
 
     void testSend() {
