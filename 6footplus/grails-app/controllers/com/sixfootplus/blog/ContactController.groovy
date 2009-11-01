@@ -16,7 +16,7 @@ class ContactController {
 
         def captchaValid = contactForm.captcha == session.captcha
         if(!captchaValid) {
-            contactForm.errors.rejectValue('captcha', null, "Invalid Captcha Response")
+            contactForm.errors.rejectValue('captcha', null, "Incorrect Maths addition answer")
         }
 
         if (captchaValid && !contactForm.hasErrors() ) {
