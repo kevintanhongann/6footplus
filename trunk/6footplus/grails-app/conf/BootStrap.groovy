@@ -4,10 +4,14 @@ import com.sixfootplus.blog.BlogComment
 import com.sixfootplus.blog.BlogUser
 import com.sixfootplus.blog.BlogRole
 import com.sixfootplus.blog.RssParserJob
+import com.sixfootplus.blog.SmsConfig
 
 class BootStrap {
 
     def init = {servletContext ->
+
+        SmsConfig config = new SmsConfig(provider:"something", username:"something", password:"something")
+        config.save()
     
         // is data in DB already available?
         if (BlogUser.findByUsername('admin')) {
