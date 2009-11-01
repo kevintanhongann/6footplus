@@ -18,7 +18,7 @@ class HomeTest extends AbstractWebTesting {
             verifyText  'my recent photos'
             verifyText  'my recent twitpics'
             verifyText  'my details'
-            verifyText  'my recent articles'
+            verifyText  'more recent articles'
             verifyText  'more stuff'
         }
 
@@ -36,7 +36,9 @@ class HomeTest extends AbstractWebTesting {
         group(description: 'Paginate list of articles'){
             invoke      '/'
             clickLink   'Older articles'
-            verifyText  'Beitrag Nr.3'
+            verifyText  'Beitrag Nr.5'
+            verifyText  'Beitrag Nr.6'
+            verifyText  'Beitrag Nr.7'
             clickLink   'Newer articles'
             verifyText  'Beitrag Nr.1'
         }

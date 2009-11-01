@@ -25,12 +25,18 @@
     height: 200px;
 }
 
+#contact-page #message_sms {
+    width: 400px;
+    height: 100px;
+}
+
 #contact-page #captchaChallenge {
     padding-bottom: 3px;
 }
 
 #contact-page #captchaResponse {
     margin-left: 100px;
+    width: 150px;
 }
 
 #contact-page  .error {
@@ -48,9 +54,30 @@
     color: #666633;
 }
 
-#contact-page .button:hover, .button a:hover{
+#contact-page .buttonsms {
+    margin-left: 20px;
+    margin-top: 2px;
+    width: 160px;
+    color: #666633;
+}
+
+#contact-page .buttonsms:hover, .buttonsms a:hover{
     background-color:#666633;
     border:1px solid white;
     color:#ffffff;
 }
+
+#contact-page .button:hover, .button a:hover {
+    background-color:#666633;
+    border:1px solid white;
+    color:#ffffff;
+}
+
+.errorsms {
+  background: #999966 url(../images/skin/exclamation.png) 0px 50% no-repeat;
+  color: #CC3300;
+  margin: 5px 0 5px 0;
+  padding: 0px 5px 0px 30px
+}
+
 

@@ -55,8 +55,12 @@ class HomeController {
     
     def recent = {
 
+        def offsetRecent = params.offsetRecent ?: 3
+        int offset = (params.offset ?: 0).toInteger() + offsetRecent.toInteger()
+
         def articles = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED,
-            [max: params.maxRecent ?: 4,
+            [max: params.maxRecent ?: 5,
+                offset: offset,
                 sort: 'dateCreated',
                 order: 'desc'])
         

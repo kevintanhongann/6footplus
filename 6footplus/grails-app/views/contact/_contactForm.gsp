@@ -5,8 +5,8 @@
 <g:formRemote name="contactForm" url="[controller:'contact', action:'send']"
               update="contactFormWrapper"
               onLoading="disableForm(); showSpinner('contact_spinner')" onLoaded="hideSpinner('contact_spinner')">
-    <form:textField name="name" label="Name" bean="${contactForm}" />
-    <form:textField name="email" label="Email" bean="${contactForm}" />
+    <form:textField name="name" label="Your name" bean="${contactForm}" />
+    <form:textField name="email" label="Your email" bean="${contactForm}" />
     <form:textField name="subject" label="Subject" bean="${contactForm}" />
     <form:textarea name="message" label="Message" bean="${contactForm}" />
 
