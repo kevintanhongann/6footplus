@@ -1,8 +1,14 @@
 class SmsTest extends AbstractWebTesting {
     
     def test01Login() {
-        invoke      '/sms'
-        verifyText  'send me an SMS to my mobile phone +49 176 4815 7373'
+
+        group(description:'Invoke authentication') {
+            invoke      '/sms/pimped'
+            verifyText  'Username'
+            verifyText  'Password'
+        }
+
+        loginSubmit();
     }
 
     def test02InvalidSubmit() {
@@ -13,7 +19,18 @@ class SmsTest extends AbstractWebTesting {
             setInputField(name:"captcha", value:"")
             clickButton(label:"Send")
             verifyXPath xpath:  "/html/body/div[@id='outer-container']/div[@id='content-container']/div[@id='smsFormWrapper']/div[@class='errorsms']",
-                        text:   'Incorrect Maths addition answer'
+            text:   'Incorrect Maths addition answer'
         }
     }
+
+    def test03Pimped() {
+
+        test01Login()
+
+        group(description:'Invoke pimped SMS page') {
+            verifyText  'Stored:'
+            verifyText  'Recipient:'
+        }
+    }
+
 }
