@@ -5,9 +5,7 @@ class SecurityFilters {
         def protectedControllers = ['blogArticle', 'blogComment', 'blogUser', 'blogLink', 'upload']
     
         auth(controller: "*", action: "*") {
-            
             before = {
-                
                 for ( protectedController in protectedControllers ){
                     if(protectedController.equals(controllerName)){
                         accessControl {
@@ -15,9 +13,16 @@ class SecurityFilters {
                         }
                     }
                 }
-                
                 //everything else is unprotected
                 return true
+            }
+        }
+
+        smsPimped(controller: "sms", action: "pimped") {
+            before = {
+                accessControl {
+                    role("ADMIN")
+                }
             }
         }
     }

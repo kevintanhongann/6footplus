@@ -2,6 +2,6 @@
 
 IP : ${providerResponse.ip}
 Result : ${providerResponse.result}
-Description :  : ${providerResponse.description}
+Description : ${providerResponse.description}
 Cause : ${providerResponse.cause}
 Message : ${providerResponse.message}

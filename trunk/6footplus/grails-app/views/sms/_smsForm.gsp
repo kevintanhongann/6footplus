@@ -1,6 +1,6 @@
 <g:javascript>
     var maxMessages = 1;
-    var maxChars = 160;
+    var maxChars = 140;
 
     function limitText(limitField) {
         if (limitField.value.length > maxChars) {
@@ -9,13 +9,17 @@
         showLeft(limitField);
     }
 
-    function showLeft(limitField)
-    {
+    function showLeft(limitField) {
         var str = new String(limitField.value);
         var curlength = str.length;
         var nrMess = Math.floor((curlength-1) / (maxChars / maxMessages)) + 1;
         var elt = document.getElementById('messagespaged');
         elt.innerHTML = "(" + curlength + " / " + nrMess + ")";
+    }
+
+    function updateRecipient() {
+        var index = document.forms[0].stored.selectedIndex;
+        document.forms[0].recipient.value = document.forms[0].stored[index].value;
     }
 </g:javascript>
 
@@ -24,8 +28,19 @@
 <g:formRemote name="smsForm" url="[controller:'sms', action:'send']"
               update="smsFormWrapper"
               onLoading="disableForm(); showSpinner('sms_spinner'); showSpinner('sms_patience')" onLoaded="hideSpinner('sms_spinner'); hideSpinner('sms_patience')">
-
-    <label>Message:<br/><br/><span id="messagespaged" style="color: #BBBBBB;">(0 / 0)</span></label>
+    <g:if test="${smsForm.hasRecipient}">
+        <g:hiddenField name="hasRecipient" value="${smsForm.hasRecipient}" />
+        <label>Stored:</label>
+        <select name="stored" onchange="updateRecipient(this)"/>
+            <option value="+27828281416">+27828281416 (Roland)</option>
+            <option value="+436503471632">+436503471632 (Pops)</option>
+            <option value="+436645729440">+436645729440 (Moms)</option>
+            <option value="+436645921962">+436645921962 (Oma)</option>
+        </select><br/><br/>
+        <label>Recipient:</label>
+        <g:textField name="recipient" style="width:150px" value="${smsForm.recipient}" /><br/>
+    </g:if>
+    <label>Message: <br/><br/><span id="messagespaged" style="color: #BBBBBB;">(0 / 0)</span></label>
     <g:textArea id="message_sms" name="message" onkeyup="limitText(this);" onkeydown="limitText(this);" value="${smsForm?.message}" />
     <label>&nbsp;</label>
     <div id="captchaChallenge"><cm:captchaRequest /></div>

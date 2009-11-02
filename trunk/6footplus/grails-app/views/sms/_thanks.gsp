@@ -16,4 +16,8 @@
 <g:if test="${providerResponse?.cause}">
      cause : ${providerResponse.cause}<br/>
 </g:if>
+<g:if test="${providerResponse?.message}">
+     message : <i>"${providerResponse.message}"</i><br/>
+</g:if>
+
 <p><g:link controller="sms" action="index">send</g:link> me another sms</p>
