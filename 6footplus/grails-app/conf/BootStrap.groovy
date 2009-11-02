@@ -10,14 +10,15 @@ class BootStrap {
 
     def init = {servletContext ->
 
-        SmsConfig config = new SmsConfig(provider:"something", username:"something", password:"something")
-        config.save()
-    
         // is data in DB already available?
         if (BlogUser.findByUsername('admin')) {
             log.info 'Database is initialized already!'
             return
         }
+
+        // create sms config
+        SmsConfig config = new SmsConfig(provider:"something", username:"something", password:"something", mobile:"KzQ5MTc2NDgxNTczNzM=")
+        config.save()
 
         // create some user roles
         def adminRole = new BlogRole(name:'ADMIN')
