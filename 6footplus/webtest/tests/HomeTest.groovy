@@ -17,9 +17,9 @@ class HomeTest extends AbstractWebTesting {
             verifyText  'my recent videos'
             verifyText  'my recent photos'
             verifyText  'my recent twitpics'
-            verifyText  'my details'
             verifyText  'more recent articles'
             verifyText  'more stuff'
+            verifyText  'articles by tag'
         }
 
         group(description:'View and submit comment'){

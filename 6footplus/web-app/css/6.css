@@ -214,6 +214,22 @@
       border-bottom: 1px dashed #CCCC99;
   }
 
+  #footer-right-bottom {
+      margin-left: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #CCCC99;
+  }
+
+  #footer-right-bottom-2 {
+      margin-left: 10px;
+      margin-bottom: 10px;
+  }
+
+  #footer-right-middle-two-column {
+      width:300px;
+      float: left;
+  }
+
   #footer-right-middle-left {
       width:150px;
       float: left;
@@ -231,10 +247,6 @@
 
   #content-container {
       width: 683px;
-  }
-
-  #footer-right-bottom {
-      margin-left: 10px;
   }
 
   #padding-left-20 {
