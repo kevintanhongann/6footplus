@@ -4,6 +4,11 @@ import com.sixfootplus.blog.ArticleStatus
 import com.sixfootplus.blog.BlogArticle
 import com.sixfootplus.blog.BlogUser
 
+/**
+ * Controller for blog articles
+ *
+ * @author Andreas Nerlich
+ */
 class BlogArticleController {
 
     def index = { 
