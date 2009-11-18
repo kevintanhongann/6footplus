@@ -9,7 +9,9 @@
     <div id="show_comments_${index}">
         <g:if test="${comments}">
             <div style="border: 1px solid #CCCC99; padding: 5px 5px 5px 5px">
-                <g:each var="comment" in="${comments}"><span class="textdark2">•  ${comment.message}</span> <span class="textlight">(${comment.author})</span> <span class="date">(<g:formatDate format="dd MMM yyyy" date="${comment.dateCreated}"/>) <jsec:isLoggedIn>[<g:link controller="blogComment" action="delete" id="${comment.id}">delete</g:link>]</jsec:isLoggedIn></span><br/></g:each>
+                <g:each var="comment" in="${comments}">
+                    <div class="textdark2">•  <span class="textlight">${comment.author} </span> - ${comment.message} <span class="date">(<g:formatDate format="dd MMM yyyy" date="${comment.dateCreated}"/>)</span> <span class="date"><jsec:isLoggedIn>[<g:link controller="blogComment" action="delete" id="${comment.id}">delete</g:link>]</jsec:isLoggedIn></span></div>
+                </g:each>
                 <div style="margin-top: 10px;">•  <a class="light" href="#" onclick="Effect.BlindUp('show_comments_${index}'); $('comment_link_${index}').appear({ duration: 1.5 }); return false;">close comments</a></div>
             </div>
         </g:if>
@@ -26,6 +28,12 @@
                 <input type="hidden" name="articleId" value="${article?.id}">
                 <label for="author">Name :</label><g:textField name="author" value="${newComment?.author}" /><br/>
                 <label for="message">Comment :</label><g:textArea name="message" value="${newComment?.message}" rows="5" cols="53"/><br/>
+                <label for="message">&nbsp;</label>
+                <div id="captchaChallenge"><cm:captchaRequest /></div>
+                <label for="message">&nbsp;</label>
+                <div id=captchaResponse">
+                    <input id="captchaResponse" type="text" name="captcha" />
+                </div>
                 <input type="submit" name="submitbutton" id="submitbutton" value="submit your comment" />
             </g:formRemote>
             <div style="padding-top:15px">• <a class="light" href="#" onclick="Effect.BlindUp('show_comments_${index}'); $('comment_link_${index}').appear({ duration: 1.5 }); return false;">close comments</a></div>        

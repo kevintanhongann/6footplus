@@ -60,13 +60,11 @@ class BlogCommentTests extends GrailsUnitTestCase {
 
         assertTrue comment.validate()
 
-        //invalid '<' character
+        //allow html
         comment.setMessage("aaa <p>")
 
         //epect validate to fail
-        assertFalse comment.validate()
-
-        assertEquals 'invalid.bountyhunter', comment.errors['message']
+        assertTrue comment.validate()
 
         //exceed the limit of 1000 chars
         (1..1001).each {

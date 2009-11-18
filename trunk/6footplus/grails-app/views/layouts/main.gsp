@@ -8,6 +8,7 @@
     <link rel="SHORTCUT ICON" href="${createLinkTo(dir: 'images', file: 'favicon.ico')}"/>
     <p:css name='lightbox'/>
     <p:css name='6'/>
+    <p:css name='tooltip/tooltip'/>
     <g:layoutHead/>
     <p:javascript src="application" />
     <p:javascript src="prototype/prototype" />
@@ -17,6 +18,7 @@
     <p:javascript src="spinner" />
     <p:javascript src="pretty" />
     <p:javascript src="lightbox" />
+    <p:javascript src="tooltip/tooltip-min" />
     <g:render template="/common/metrics"/>
 </head>
 <body>

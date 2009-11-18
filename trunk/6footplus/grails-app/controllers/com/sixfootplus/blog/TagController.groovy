@@ -7,7 +7,7 @@ class TagController {
     def show = {
 
         //maximum tags to return
-        def maxTags = (params?.maxTags ?: 7).toInteger()
+        def maxTags = (params?.maxTags ?: 10).toInteger()
 
         //mapping tag name with count e.g. [techie:16]
         def tagCount = [:]

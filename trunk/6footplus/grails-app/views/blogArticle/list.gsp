@@ -13,6 +13,16 @@
         <g:link class="light" action="edit" id="${article.id}">edit</g:link> |
         <g:link class="light" action="delete" id="${article.id}">delete</g:link> |
         <g:link class="light" action="show" id="${article.id}">tags</g:link>
+        <span class="date">
+            <g:if test="${article.tags}">(
+                <g:set var="counter" value="${1}" />
+                <g:each in="${article.tags}">
+                    <g:set var="tag" value="${it}" />
+                    <g:link action="index" params="[tag:it]" class="brown_s">${tag}</g:link>${counter < article.tags.size ? ', ' : ''}
+                    <g:set var="counter" value="${counter + 1}" />
+                </g:each>)
+            </g:if>
+        </span>
         <div style="margin-top:10px;">${article.body}</div>
         <div style="clear:both; padding-top: 10px; padding-bottom: 10px">
             <g:each var="link" in="${article.links}">• <a class="brown" href="${link.url}">${link.label}</a>&nbsp;</g:each> 

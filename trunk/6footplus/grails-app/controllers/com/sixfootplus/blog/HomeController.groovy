@@ -14,11 +14,16 @@ class HomeController {
         def total
 
         if(!params.tag){
+
             if(!params.max){
                 params.max = 3
             }
+
             list = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED,
-                [max: params.max, offset: params.offset, sort: 'dateCreated',order: 'desc'])
+                [max: params.max,
+                    offset: params.offset ?: 0,
+                    sort: 'dateCreated',
+                    order: 'desc'])
             total = BlogArticle.countByStatus(ArticleStatus.PUBLISHED)
 
             if(total < 1){
@@ -63,7 +68,7 @@ class HomeController {
                 offset: offset,
                 sort: 'dateCreated',
                 order: 'desc'])
-        
+
         return [articles:articles]
     }
 
@@ -71,7 +76,16 @@ class HomeController {
 
         def article = BlogArticle.get(params.id)
         if(article){
-            return [article: article]
+            flash.message = ""
+            def after = BlogArticle.findByDateCreatedGreaterThanAndStatus(
+                                article.dateCreated,
+                                ArticleStatus.PUBLISHED,
+                                [max: 1, sort: 'dateCreated', order: 'asc'])
+            def before = BlogArticle.findByDateCreatedLessThanAndStatus(
+                                article.dateCreated,
+                                ArticleStatus.PUBLISHED,
+                                [max: 1, sort: 'dateCreated', order: 'desc'])
+            return [article: article, before:before, after:after]
         } else {
             flash.message = "Article not found with id ${params.id}"
         }
@@ -90,20 +104,28 @@ class HomeController {
         
         //initialize return object
         Map model = [:]
+
+        //is captcha answer correct?
+        def captchaValid = params.captcha == session.captcha
         
         //load article
         BlogArticle article = BlogArticle.read(params.articleId)
-        
+
+        //instantiate comment entity
         BlogComment comment = new BlogComment()
         comment.message = params.message
         comment.article = article
         comment.ip = request.getRemoteAddr()
         comment.author = params.author
-                
-        if (!comment.save()) {
-            model.newComment = comment
-        } else {
+
+        if (comment.validate() && captchaValid) {
+            comment.save()
             flash.message = "Thank you for your comment"
+        } else {
+            if(!captchaValid) {
+                comment.errors.rejectValue('captcha', null, "Incorrect Maths addition answer")
+            }
+            model.newComment = comment
         }
         
         model.showComments = true
@@ -111,5 +133,4 @@ class HomeController {
         
         render(template: 'comments', model: model)
     }
-
 }
