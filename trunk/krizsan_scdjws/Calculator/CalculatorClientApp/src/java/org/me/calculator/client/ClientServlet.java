@@ -31,7 +31,6 @@
 package org.me.calculator.client;
 
 import java.io.*;
-import java.net.*;
 import javax.annotation.Resource;
 
 import javax.servlet.*;
