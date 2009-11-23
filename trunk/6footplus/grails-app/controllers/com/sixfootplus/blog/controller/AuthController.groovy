@@ -1,3 +1,5 @@
+package com.sixfootplus.blog.controller
+
 import org.jsecurity.authc.AuthenticationException
 import org.jsecurity.authc.UsernamePasswordToken
 import org.jsecurity.SecurityUtils

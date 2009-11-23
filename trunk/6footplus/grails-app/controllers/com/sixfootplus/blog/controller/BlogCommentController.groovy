@@ -1,8 +1,11 @@
-package com.sixfootplus.blog
+package com.sixfootplus.blog.controller
+
+import com.sixfootplus.blog.BlogComment
+import com.sixfootplus.blog.BlogArticle
 
 class BlogCommentController {
 
-    def scaffold = true
+    def scaffold = BlogComment
 
     def list = {
 

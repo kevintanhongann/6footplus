@@ -1,4 +1,4 @@
-package com.sixfootplus.blog
+package com.sixfootplus.blog.controller
 
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as holder
 
