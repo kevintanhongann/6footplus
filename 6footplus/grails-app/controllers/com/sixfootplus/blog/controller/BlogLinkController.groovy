@@ -1,8 +1,11 @@
-package com.sixfootplus.blog
+package com.sixfootplus.blog.controller
+
+import com.sixfootplus.blog.BlogLink
+import com.sixfootplus.blog.BlogArticle
 
 class BlogLinkController {
 
-    def scaffold = true
+    def scaffold = BlogLink
 
     def list = {
 

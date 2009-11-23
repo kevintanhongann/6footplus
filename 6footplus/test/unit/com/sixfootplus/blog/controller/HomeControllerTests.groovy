@@ -1,4 +1,6 @@
-package com.sixfootplus.blog
+package com.sixfootplus.blog.controller
+
+import com.sixfootplus.blog.*
 
 class HomeControllerTests extends grails.test.ControllerUnitTestCase {
 
