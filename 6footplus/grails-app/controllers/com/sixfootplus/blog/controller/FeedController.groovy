@@ -2,6 +2,7 @@ package com.sixfootplus.blog.controller
 
 import com.sixfootplus.blog.BlogArticle
 import com.sixfootplus.blog.ArticleStatus
+
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as holder
 
 class FeedController {
@@ -11,19 +12,19 @@ class FeedController {
     def order = "desc"
     def host = holder.config?.grails?.serverURL
 
-    def atom = {
-        
-        render(feedType: params.type ?: "atom") {
+    def rss = {
+
+        render(feedType:"rss", feedVersion:"2.0") {
 
             title = "6footplus.com"
-            description = "Latest ${max} articles by Andreas Nerlich"
             link = host
+            description = "Latest ${max} articles by Andreas Nerlich"
 
             def list
 
             if(!params.id){
-                list = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED, [max: max, sort: sort, order: order])}
-            else {
+                list = BlogArticle.findAllByStatus(ArticleStatus.PUBLISHED, [max: max, sort: sort, order: order])
+            } else {
                 list = BlogArticle.findAllByTagWithCriteria(params.id,  {
                         eq('status', ArticleStatus.PUBLISHED)
                         order(sort, order)
@@ -31,9 +32,8 @@ class FeedController {
                 description = "Articles by Andreas Nerlich tagged as '$params.id'"
             }
 
-            list.each() {
-                def article = it
-                entry(it.subject) {
+            list.each() { article ->
+                entry(article.subject) {
                     author = "Andreas Nerlich"
                     title = "${article.subject}"
                     link = host + "/home/show/${article.id}"
@@ -42,10 +42,5 @@ class FeedController {
                 }
             }
         }
-    }
-
-    def rss = {
-
-        redirect(action:atom, params:["type":"rss", "id":params.id])
     }
 }
