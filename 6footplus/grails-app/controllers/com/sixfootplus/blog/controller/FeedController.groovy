@@ -1,6 +1,7 @@
 package com.sixfootplus.blog.controller
 
 import com.sixfootplus.blog.BlogArticle
+import com.sixfootplus.blog.ArticleStatus
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as holder
 
 class FeedController {
