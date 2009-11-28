@@ -56,4 +56,4 @@
     </div>
 </div>
 <div style="clear:both; padding-top: 10px; margin-bottom: 10px; border-bottom: 1px solid #666633;"></div>
-<p class="date" style="text-align: right">i built this blogging engine with groovy & grails | <a class="brown_s" href="http://code.google.com/p/6footplus/">source code</a></p>
+<p class="textdark" style="text-align: right">i built this blogging engine with groovy & <a class="brown" href="http://grails.org">grails</a> | <a class="brown" href="http://code.google.com/p/6footplus/">source code</a></p>
