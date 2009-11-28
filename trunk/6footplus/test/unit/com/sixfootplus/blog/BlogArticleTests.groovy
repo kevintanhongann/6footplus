@@ -21,6 +21,15 @@ class BlogArticleTests extends GrailsUnitTestCase {
         super.tearDown()
     }
 
+    void testValid() {
+
+        article.status = ArticleStatus.UNPUBLISHED
+        article.author = new BlogUser(username:"name name", password:"dfgdfgdf", email: "enail@df.com")
+
+        assertTrue article.validate()
+        assertNotNull article.toString()
+    }
+
     void testConstraintsNullable() {
 
         assertEquals "subject", article.subject
