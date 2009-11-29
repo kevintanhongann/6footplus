@@ -1,12 +1,15 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
+        <g:if test="${params.tag}">
+            <title>6footplus.com - '${params.tag}' tagged articles</title>
+        </g:if>
     </head>
     <body>
 
         <g:include controller="twitter" action="show"/>
 
-        <g:if test="${articles.size() == 0}"><div class="message">${flash.message}</div></g:if>
+        <g:if test="${flash.message}"><div class="message" style="margin-bottom:20px">${flash.message}</div></g:if>
         <g:each var="article" in="${articles}">
             <div>
                 <g:link class="title" action="show" id="${article.id}">${article.subject?.encodeAsHTML()}</g:link>
