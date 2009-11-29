@@ -80,6 +80,7 @@ class HomeControllerTests extends grails.test.ControllerUnitTestCase {
 
         assertEquals 1, model.blogCount
         assertEquals 1, model.articles.size()
+        assertEquals "Showing only articles tagged as 'dev'", mockFlash.message
     }
 
     void testIndexWithTagNoArticles() {
