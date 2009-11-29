@@ -72,13 +72,13 @@ class BlogArticleController {
             article.properties = params
             if (article.save()) {
                 flash.message = "Article ${params.id} updated."
-                redirect(action: show, id: article.id)
+                redirect(action: "show", id: article.id)
             } else {
                 render(view: 'edit', model: [article: article])
             }
         } else {
             flash.message = "Article not found with id ${params.id}"
-            redirect(action: edit, id: params.id)
+            redirect(action: "edit", id: params.id)
         }
     }
 

@@ -187,6 +187,66 @@ class BlogArticleControllerTests extends grails.test.ControllerUnitTestCase {
         assertEquals "Article not found with id 10", mockFlash.message
     }
 
+    void testUpdate() {
+
+        def controller = newInstance()
+
+        mockDomain(BlogArticle, [new BlogArticle(
+                    id:1,
+                    subject:"subject subject",
+                    body:"body body body",
+                    status:ArticleStatus.PUBLISHED,
+                    author:mockFor(BlogUser).createMock())])
+
+        controller.params.id = 1
+
+        controller.update()
+
+        assertEquals "Article 1 updated.", mockFlash.message
+        assertEquals "show", redirectArgs.action
+        assertEquals 1, redirectArgs.id
+    }
+
+    void testUpdateInvalid() {
+
+        def controller = newInstance()
+
+        mockDomain(BlogArticle, [new BlogArticle(
+                    id:1,
+                    subject:"subject subject",
+                    body:"body body body",
+                    status:ArticleStatus.PUBLISHED,
+                    author:mockFor(BlogUser).createMock())])
+
+        controller.params.id = 1
+        controller.params.subject = ""
+
+        controller.update()
+
+        assertEquals "edit", renderArgs.view
+        assertNotNull renderArgs.model.article
+    }
+
+    void testUpdateNotFound() {
+
+        def controller = newInstance()
+
+        mockDomain(BlogArticle, [new BlogArticle(
+                    id:1,
+                    subject:"subject subject",
+                    body:"body body body",
+                    status:ArticleStatus.PUBLISHED,
+                    author:mockFor(BlogUser).createMock())])
+
+        controller.params.id = 10
+
+        controller.update()
+
+        assertEquals "Article not found with id 10", mockFlash.message
+        assertEquals "edit", redirectArgs.action
+        assertEquals 10, redirectArgs.id
+    }
+
     void testDelete() {
 
         def controller = newInstance()
@@ -229,11 +289,11 @@ class BlogArticleControllerTests extends grails.test.ControllerUnitTestCase {
         controller.tagService = tagServiceMock.createMock()
 
         def article = new BlogArticle(
-                    id:1,
-                    subject:"subject subject",
-                    body:"body body body",
-                    status:ArticleStatus.PUBLISHED,
-                    author:mockFor(BlogUser).createMock())
+            id:1,
+            subject:"subject subject",
+            body:"body body body",
+            status:ArticleStatus.PUBLISHED,
+            author:mockFor(BlogUser).createMock())
 
         def blogArticleMock = mockFor(BlogArticle)
         blogArticleMock.demand.static.get {id -> return article}

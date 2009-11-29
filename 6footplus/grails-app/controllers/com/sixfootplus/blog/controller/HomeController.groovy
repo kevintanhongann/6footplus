@@ -47,6 +47,7 @@ class HomeController {
 
             if(total > 0){
                 list = list[offset..(((offset + max) > total) ? total : (offset + max)) - 1]
+                flash.message = "Showing only articles tagged as '" + params.tag + "'"
             } else {
                 flash.message = "No articles found for tag '${params.tag}'"
             }
