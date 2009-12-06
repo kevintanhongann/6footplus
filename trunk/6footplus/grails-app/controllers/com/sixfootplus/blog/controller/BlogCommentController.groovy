@@ -45,7 +45,7 @@ class BlogCommentController {
             comment.properties = params
             if (comment.save()) {
                 flash.message = "Comment ${params.id} updated!"
-                redirect(action: list)
+                redirect(action: "list")
             } else {
                 render(view: 'edit', model: [comment: comment, articles: BlogArticle.findAll(
                             [sort: 'dateCreated',
@@ -53,7 +53,7 @@ class BlogCommentController {
             }
         } else {
             flash.message = "Comment not found with id ${params.id}"
-            redirect(action: edit, id: params.id)
+            redirect(action: "edit", id: params.id)
         }
     }
 
