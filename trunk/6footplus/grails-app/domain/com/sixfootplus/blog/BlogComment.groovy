@@ -11,7 +11,7 @@ class BlogComment {
     String captcha
 
     static belongsTo = [article: BlogArticle]
-    static transients = [ "captcha" ]
+    static transients = ["captcha"]
 
     static constraints = {
         author(blank: false, nullable: false, size: 1..40)

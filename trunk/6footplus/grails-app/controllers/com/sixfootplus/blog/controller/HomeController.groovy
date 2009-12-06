@@ -15,6 +15,8 @@ class HomeController {
 
         if(!params.tag){
 
+            flash.message = ""
+
             if(!params.max){
                 params.max = 3
             }
@@ -28,7 +30,7 @@ class HomeController {
 
             if(total < 1){
                 flash.message = "No articles found!"
-            }
+            } 
 
         } else {
 
