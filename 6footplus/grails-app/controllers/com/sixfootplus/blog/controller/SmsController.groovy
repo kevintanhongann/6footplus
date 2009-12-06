@@ -1,6 +1,7 @@
 package com.sixfootplus.blog.controller
 
 import org.jsecurity.*
+import com.sixfootplus.blog.SmsConfig
 
 class SmsController {
 
