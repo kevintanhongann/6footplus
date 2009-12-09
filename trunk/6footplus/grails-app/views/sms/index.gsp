@@ -9,7 +9,6 @@
             <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>
         <span class="heading">sms</span>
-        <p>send me an SMS to my mobile phone +49 176 4815 7373</p>
         <div id="smsFormWrapper" style="width:600px">
             <g:include controller="sms" action="showForm" />
         </div>
