@@ -20,4 +20,4 @@
      message : <i>"${providerResponse.message}"</i><br/>
 </g:if>
 
-<p><g:link controller="sms" action="index">send</g:link> me another sms</p>
+<p><g:link controller="sms" action="index">send</g:link> another sms</p>

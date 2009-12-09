@@ -23,6 +23,13 @@
     }
 </g:javascript>
 
+<g:if test="${smsForm.hasRecipient}">
+    <p>select one of the commonly used recipients or enter a new number into the recipient input field:</p>
+</g:if>
+<g:else>
+    <p>by submitting a message below, an SMS will be delivered to <g:link controller="contact" action="index">my mobile phone</g:link>:</p>
+</g:else>
+
 <g:eachError bean="${smsForm}"><div class="errorsms"><g:message error="${it}"/></div></g:eachError><br/>
 
 <g:formRemote name="smsForm" url="[controller:'sms', action:'send']"
