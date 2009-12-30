@@ -13,7 +13,6 @@ class TwitterJob {
         
         if(!messages.isEmpty()) {
             TwitterStatus.findAll()*.delete();
-            println "Deleted all existing twitter entries!"
         }
 
         (0..< messages.size()).each {
