@@ -32,7 +32,6 @@ class TwitpicJob {
         //delete existing only if rss contains items
         if(xmlFeed?.channel?.item != null){
             RssFeed.findAllByProducer(producer)*.delete();
-            println "Deleted all existing ${producer} entries!"
         }
         
         (0..< xmlFeed.channel.item.size()).each {
