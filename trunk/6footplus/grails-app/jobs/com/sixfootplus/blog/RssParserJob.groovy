@@ -23,7 +23,6 @@ class RssParserJob {
             //delete existing only if rss contains items
             if(xmlFeed?.channel?.item != null){
                 RssFeed.findAllByProducer(mapFeed.key)*.delete();
-                println "Deleted all existing ${mapFeed.key} entries!"
             }
             
             (0..< xmlFeed.channel.item.size()).each {
