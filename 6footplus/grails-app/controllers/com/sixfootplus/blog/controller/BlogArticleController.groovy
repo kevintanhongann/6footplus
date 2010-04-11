@@ -16,7 +16,7 @@ class BlogArticleController {
 
     def index = {
 
-        redirect action:'list', params: params
+        redirect(action:'list', params: params)
     }
 
     def list = {
@@ -46,7 +46,7 @@ class BlogArticleController {
 
         if (article.save()) {
             flash.message = "Article ${article.id} created."
-            redirect action: "list"
+            redirect (action: "list")
         } else {
             render(view: 'create', model: [article: article, users: BlogUser.findAll(), ArticleStatus: ArticleStatus])
         }
@@ -101,7 +101,7 @@ class BlogArticleController {
         } else {
             flash.message = "Article not found with id ${params.id}"
         }
-        
+
         redirect(action: "list")
     }
 
@@ -116,7 +116,7 @@ class BlogArticleController {
         if(params.tag){
             tagService.parseTags(article, params.tag)
         }
-        
+
         model.article = article
 
         render(template: 'tags', model: model)

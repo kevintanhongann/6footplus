@@ -8,7 +8,7 @@ class ContactControllerTests extends grails.test.ControllerUnitTestCase {
 
         controller.index()
 
-        assertNull controller.modelAndView.model
+        assert controller.modelAndView.model.size() == 0
         assertNull controller.modelAndView.view
     }
 
