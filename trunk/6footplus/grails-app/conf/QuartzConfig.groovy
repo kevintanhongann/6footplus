@@ -1,10 +1,14 @@
-import grails.util.Environment
 
 quartz {
-    if (Environment.current != Environment.TEST) { 
-        autoStartup = true
-    } else {
-        autoStartup = false
-    }
+    autoStartup = true
     jdbcStore = false
+    waitForJobsToCompleteOnShutdown = true
+}
+
+environments {
+    test {
+        quartz {
+            autoStartup = false
+        }
+    }
 }

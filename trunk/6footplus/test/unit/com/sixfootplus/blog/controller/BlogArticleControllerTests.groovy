@@ -64,20 +64,18 @@ class BlogArticleControllerTests extends grails.test.ControllerUnitTestCase {
 
         def controller = newInstance()
 
-        mockDomain(BlogArticle)
-        mockDomain(BlogUser, [new BlogUser(
+        def user = new BlogUser(
                     username:"username",
                     password:"password",
-                    email:"email")])
+                    email:"email")
+
+        mockDomain(BlogArticle, [])
+        mockDomain(BlogUser, [user])
 
         controller.params.subject = "subject subject"
         controller.params.body = "body body body"
         controller.params.status = ArticleStatus.PUBLISHED
-        controller.params.author = [
-            id:1,
-            username:"username",
-            password:"password",
-            email:"user@name.com"]
+        controller.params.author = user
 
         controller.save()
 
