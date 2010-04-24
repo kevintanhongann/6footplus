@@ -43,12 +43,12 @@ class HomeControllerTests extends GrailsUnitTestCase {
 
         assertEquals("Expected flash message :", "Article not found with id null", hc.flash.message)
 
-        hc.params.id = 900
+        hc.params.id = "900"
         hc.show()
 
         assertEquals("Expected flash message :", "Article not found with id 900", hc.flash.message)
 
-        hc.params.id = 2
+        hc.params.id = "2"
         def model = hc.show()
 
         assertEquals("Expected article with id 2 :", 2, model.article.id)
