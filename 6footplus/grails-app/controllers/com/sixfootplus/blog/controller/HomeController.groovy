@@ -77,7 +77,7 @@ class HomeController {
 
     def show = {
 
-        if(!params.id.isInteger()) {
+        if(params.id && !params.id.isInteger()) {
             flash.message = "Article id '${params.id}' is not valid!"
             return
         }
