@@ -17,9 +17,12 @@ class UrlMappings {
         // standard mapping of Grails
         "/$controller/$action?/$id?" {}
 
-        "/$id" {
+        "/$id?" {
             controller = "home"
             action = "show"
+            constraints {
+                id(matches:"[0-9]+")
+            }
         }
         // error definition
         "500"(controller: 'error', action : 'error')
