@@ -27,7 +27,7 @@
     <p>select one of the commonly used recipients or enter a new number into the recipient input field:</p>
 </g:if>
 <g:else>
-    <p>by submitting a message below, an SMS will be delivered to <g:link controller="contact" action="index">my mobile phone</g:link>:</p>
+    <p>by submitting a message below, an SMS will be delivered to my mobile phone number +49 176 4815 7373. Include your details if you would like me to know who you are.</p>
 </g:else>
 
 <g:eachError bean="${smsForm}"><div class="errorsms"><g:message error="${it}"/></div></g:eachError><br/>
