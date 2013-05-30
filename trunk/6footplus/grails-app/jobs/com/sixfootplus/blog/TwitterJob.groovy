@@ -1,24 +1,27 @@
 package com.sixfootplus.blog
 
+import twitterChecker.*
+
 class TwitterJob {
-    
+
+	def twitterCheckerService
+	
     def concurrent = false
-    def cronExpression = "0 0/1 * * * ?"
+    def cronExpression = "0 0/15 * * * ?"
     def twitterService
     def mbCal = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
     
     def execute() {
 
-        def messages = twitterService.getUserTimeline("6footplus", 10, null)
+        def messages = twitterCheckerService.userTimeline
         
         if(!messages.isEmpty()) {
             TwitterStatus.findAll()*.delete();
         }
 
-        (0..< messages.size()).each {
+        messages.each {
 
-            def item = messages.get(it)
-            def date = item.createdAt
+            def date = it.createdAt
 
             mbCal.setTimeInMillis(date.getTime())
 
@@ -31,10 +34,10 @@ class TwitterJob {
             cal.set(Calendar.SECOND, mbCal.get(Calendar.SECOND))
             cal.set(Calendar.MILLISECOND, mbCal.get(Calendar.MILLISECOND))
 
-            def twitterStatus = new TwitterStatus(id:item.id, text:item.text, createdAt:cal.getTime())
+            def twitterStatus = new TwitterStatus(id:it.id, text:it.text, createdAt:cal.getTime())
             
             if(!twitterStatus.save()){
-                println "Could not save twitter status : " + item.text;
+                println "Could not save twitter status : " + it.text;
             }
         }
     }

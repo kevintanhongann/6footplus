@@ -8,7 +8,9 @@
     <body>
 
         <g:include controller="twitter" action="show"/>
-
+		<iframe src="http://widget.ink361.com/in/6footplus?x=5&y=1&size=115&bg=&border=undefined&padding=8&w=673&h=141" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:673px; height:141px" ></iframe> 
+		<div style="padding-bottom:15px;padding-right:20px;text-align:right">...see all <a href="http://instagr.am/6footplus">6footplus instagram photos</a></div>
+		
         <g:if test="${flash.message}"><div class="message" style="margin-bottom:20px">${flash.message}</div></g:if>
         <g:each var="article" in="${articles}">
             <div>
