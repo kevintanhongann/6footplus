@@ -1,9 +1,8 @@
-package com.sixfootplus.blog.controller
+package twitterChecker
 
 import org.codehaus.groovy.grails.commons.*
 import twitter4j.*
 import twitter4j.auth.*
-import twitterChecker.*
 
 class TwitterCheckerController {
 
@@ -90,16 +89,4 @@ twitterChecker {
 
     def demo = {
     }
-	
-	def andreas = {
-		// use the cached version of the user timeline
-		twitterCheckerService.cachedTimeline
-
-		// get a new fresh version of the user timeline http://twitter4j.org/en/javadoc-latest/core/twitter4j/Twitter.html#getUserTimeline()
-		def timeline = twitterCheckerService.userTimeline
-		
-		timeline.each() {
-			println  it.text + it.annotations
-		}
-	}
 }
